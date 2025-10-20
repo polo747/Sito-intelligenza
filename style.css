@@ -1,28 +1,44 @@
+/* Reset base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
   background: linear-gradient(to bottom right, #ecf0f1, #d6eaf8);
   color: #2c3e50;
   padding: 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* Modalità scura */
+body.dark-mode {
+  background: linear-gradient(to bottom right, #2c3e50, #1c2833);
+  color: #ecf0f1;
+}
+
+/* Titoli */
 h1, h2, h3 {
   color: #3498db;
   margin-bottom: 15px;
 }
 
+/* Navigazione */
 nav {
   background-color: #2980b9;
   padding: 12px 0;
   margin-bottom: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
+}
+
+body.dark-mode nav {
+  background-color: #1f618d;
 }
 
 nav ul {
@@ -47,13 +63,21 @@ nav ul li a:hover {
   color: #f1c40f;
 }
 
+/* Contenuto principale */
 main {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
+body.dark-mode main {
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+/* Layout flessibile */
 .layout {
   display: flex;
   justify-content: space-between;
@@ -66,6 +90,7 @@ main {
   flex: 1 1 60%;
 }
 
+/* Immagini */
 img {
   margin: 10px 0;
   border-radius: 10px;
@@ -82,12 +107,14 @@ img:hover {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Liste */
 ul {
   list-style-type: disc;
   margin-left: 25px;
   margin-bottom: 20px;
 }
 
+/* Tabelle */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -112,6 +139,7 @@ td {
   background-color: #ebf5fb;
 }
 
+/* Quiz */
 .quiz-question {
   margin-bottom: 20px;
 }
@@ -121,6 +149,7 @@ td {
   margin: 6px 0;
 }
 
+/* Pulsanti con effetto 3D */
 button {
   background-color: #3498db;
   color: #fff;
@@ -129,9 +158,10 @@ button {
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 0 #2c3e50;
+  box-shadow: 0 6px 0 #2c3e50;
   transition: all 0.2s ease;
   margin-top: 20px;
+  position: relative;
 }
 
 button:hover {
@@ -139,8 +169,40 @@ button:hover {
 }
 
 button:active {
+  top: 2px;
   box-shadow: 0 2px 0 #2c3e50;
-  transform: translateY(2px);
 }
+
+/* Animazione di entrata */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
+
 
 
