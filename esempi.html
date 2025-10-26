@@ -1,77 +1,81 @@
-<header class="neumorphic-header" role="banner">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="Home page">
-                <span role="img" aria-label="Stella luminosa">🌟</span> Intelligenze Multiple
-            </a>
-            
-            <input type="checkbox" id="nav-toggle-input" class="hidden-control">
-            <label for="nav-toggle-input" class="nav-toggle-label" aria-label="Apri menu di navigazione">☰</label>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Esempi di Intelligenze Multiple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-            <nav id="main-nav" class="nav-menu" role="navigation">
-                <ul role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tipi-intelligenza.html" class="active" aria-current="page">Tipi di Intelligenza</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="confronto.html">Confronto</a></li>
-                    <li><a href="consigli.html">Consigli</a></li>
-                    <li><a href="esempi.html">Esempi</a></li>
-                    <li><a href="faq.html">FAQ</a></li> </ul>
-            </nav>
-        </div>
-    </header>
-  <main>
-    <h2>Esempi di Persone con Intelligenze Diverse</h2>
-    <section class="layout">
-      <div class="content">
-        <ul>
-          <li>
-            <strong>Intelligenza Linguistica:</strong> <em>William Shakespeare</em> – celebre scrittore e poeta inglese.
-            <img src="img/linguistica.jpg" alt="Scrittore">
-          </li>
-          <li>
-            <strong>Intelligenza Logico-Matematica:</strong> <em>Albert Einstein</em> – fisico teorico noto per la teoria della relatività.
-            <img src="img/logico.jpg" alt="Scienziato">
-          </li>
-          <li>
-            <strong>Intelligenza Spaziale:</strong> <em>Leonardo da Vinci</em> – artista e inventore con eccezionali abilità visive e creative.
-            <img src="img/spaziale.jpg" alt="Artista">
-          </li>
-          <li>
-            <strong>Intelligenza Corporeo-Cinestetica:</strong> <em>Marcell Jacobs</em> – atleta olimpico con controllo corporeo straordinario.
-            <img src="img/corporea.jpg" alt="Atleta">
-          </li>
-          <li>
-            <strong>Intelligenza Musicale:</strong> <em>Ludwig van Beethoven</em> – compositore tedesco tra i più influenti della storia.
-            <img src="img/musicale.jpg" alt="Musicista">
-          </li>
-          <li>
-            <strong>Intelligenza Emotiva:</strong> <em>Oprah Winfrey</em> – conduttrice e filantropa dotata di empatia e comunicazione.
-            <img src="img/emotiva.jpg" alt="Comunicatrice">
-          </li>
-          <li>
-            <strong>Intelligenza Intrapersonale:</strong> <em>Sigmund Freud</em> – psicoanalista che ha esplorato la mente e la consapevolezza di sé.
-            <img src="img/intrapersonale.jpg" alt="Pensatore">
-          </li>
-          <li>
-            <strong>Intelligenza Naturalistica:</strong> <em>Jane Goodall</em> – scienziata e ambientalista esperta nello studio dei primati.
-            <img src="img/naturalistica.jpg" alt="Naturalista">
-          </li>
-        </ul>
-      </div>
-    </section>
-  </main>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌟 Intelligenze Multiple</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li><a href="consigli.html">Consigli</a></li>
+        <li><a href="esempi.html">Esempi</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <footer>
-    <p>2025 Intelligenze Multiple – Marco Abbo</p>
-  </footer>
+  <main>
+    <h2>Esempi di Persone con Intelligenze Diverse</h2>
+    <section class="layout">
+      <div class="content">
+        <ul>
+          <li>
+            <strong>Intelligenza Linguistica:</strong> <em>William Shakespeare</em> – celebre scrittore e poeta inglese.
+            <img src="img/linguistica.jpg" alt="Scrittore">
+          </li>
+          <li>
+            <strong>Intelligenza Logico-Matematica:</strong> <em>Albert Einstein</em> – fisico teorico noto per la teoria della relatività.
+            <img src="img/logico.jpg" alt="Scienziato">
+          </li>
+          <li>
+            <strong>Intelligenza Spaziale:</strong> <em>Leonardo da Vinci</em> – artista e inventore con eccezionali abilità visive e creative.
+            <img src="img/spaziale.jpg" alt="Artista">
+          </li>
+          <li>
+            <strong>Intelligenza Corporeo-Cinestetica:</strong> <em>Marcell Jacobs</em> – atleta olimpico con controllo corporeo straordinario.
+            <img src="img/corporea.jpg" alt="Atleta">
+          </li>
+          <li>
+            <strong>Intelligenza Musicale:</strong> <em>Ludwig van Beethoven</em> – compositore tedesco tra i più influenti della storia.
+            <img src="img/musicale.jpg" alt="Musicista">
+          </li>
+          <li>
+            <strong>Intelligenza Emotiva:</strong> <em>Oprah Winfrey</em> – conduttrice e filantropa dotata di empatia e comunicazione.
+            <img src="img/emotiva.jpg" alt="Comunicatrice">
+          </li>
+          <li>
+            <strong>Intelligenza Intrapersonale:</strong> <em>Sigmund Freud</em> – psicoanalista che ha esplorato la mente e la consapevolezza di sé.
+            <img src="img/intrapersonale.jpg" alt="Pensatore">
+          </li>
+          <li>
+            <strong>Intelligenza Naturalistica:</strong> <em>Jane Goodall</em> – scienziata e ambientalista esperta nello studio dei primati.
+            <img src="img/naturalistica.jpg" alt="Naturalista">
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
-  </script>
+  <footer>
+    <p>2025 Intelligenze Multiple – Marco Abbo</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>
+
 
 
