@@ -91,7 +91,8 @@ nav a[href="tipi-intelligenza.html"],
 nav a[href="quiz.html"],
 nav a[href="confronto.html"],
 nav a[href="consigli.html"],
-nav a[href="esempi.html"] { 
+nav a[href="esempi.html"]
+nav a[href="riflessioni.html"]{ 
     color: white; 
     background-color: #0077cc; 
     box-shadow: 
@@ -442,6 +443,7 @@ table tbody tr:hover {
     justify-content: center;
     margin-top: 20px;
 }
+
 
 
 
