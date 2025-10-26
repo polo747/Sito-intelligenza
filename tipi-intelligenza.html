@@ -1,106 +1,93 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔍 Tipi di Intelligenza | Le 8 Categorie</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Tipi di Intelligenza</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="neumorphic-header" role="banner">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="Home page">
-                <span role="img" aria-label="Stella luminosa">🌟</span> Intelligenze Multiple
-            </a>
-            
-            <input type="checkbox" id="nav-toggle-input" class="hidden-control">
-            <label for="nav-toggle-input" class="nav-toggle-label" aria-label="Apri menu di navigazione">☰</label>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌟 Intelligenze Multiple</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li><a href="consigli.html">Consigli</a></li>
+        <li><a href="esempi.html">Esempi</a></li>
+      </ul>
+    </nav>
+    <h1>I tipi di Intelligenza secondo Gardner</h1>
+  </header>
 
-            <nav id="main-nav" class="nav-menu" role="navigation">
-                <ul role="list">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="tipi-intelligenza.html" class="active" aria-current="page">Tipi di Intelligenza</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="confronto.html">Confronto</a></li>
-                    <li><a href="consigli.html">Consigli</a></li>
-                    <li><a href="esempi.html">Esempi</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <main>
+    <p>Secondo Howard Gardner, esistono diversi tipi di intelligenza. Ecco una panoramica:</p>
 
-    <main id="content" role="main">
-        <section class="hero-section">
-            <div class="container">
-                <h1>Le 8 <span class="highlight">Intelligenze</span> di Gardner</h1>
-                <p class="subtitle">Un'analisi dettagliata di ogni dominio cognitivo e di come si manifesta.</p>
-            </div>
-        </section>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo di Intelligenza</th>
+          <th>Descrizione</th>
+          <th>Esempi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Linguistica</td>
+          <td>Abilità nel parlare, scrivere e comprendere.</td>
+          <td>Scrittori, poeti, avvocati</td>
+        </tr>
+        <tr>
+          <td>Logico-Matematica</td>
+          <td>Capacità di calcolo, logica e problem solving.</td>
+          <td>Scienziati, ingegneri</td>
+        </tr>
+        <tr>
+          <td>Spaziale</td>
+          <td>Capacità di visualizzazione e orientamento nello spazio.</td>
+          <td>Architetti, artisti</td>
+        </tr>
+        <tr>
+          <td>Corporeo-Cinestetica</td>
+          <td>Coordinazione motoria e utilizzo del corpo.</td>
+          <td>Atleti, ballerini</td>
+        </tr>
+        <tr>
+          <td>Musicale</td>
+          <td>Abilità di riconoscere e creare ritmo e melodia.</td>
+          <td>Musicisti, cantanti</td>
+        </tr>
+        <tr>
+          <td>Interpersonale</td>
+          <td>Capacità di comunicare e capire gli altri.</td>
+          <td>Insegnanti, psicologi</td>
+        </tr>
+        <tr>
+          <td>Intrapersonale</td>
+          <td>Conoscenza di sé e delle proprie emozioni.</td>
+          <td>Filosofi, psicoterapeuti</td>
+        </tr>
+        <tr>
+          <td>Naturalistica</td>
+          <td>Sensibilità per la natura e gli esseri viventi.</td>
+          <td>Biologi, agronomi</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
 
-        <section class="container mt-40 intelligenze-grid grid-3-cols">
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Linguistica</h3>
-                <p>Abilità di usare efficacemente la lingua, sia oralmente che per iscritto. Riguarda la capacità di manipolare la sintassi, la semantica e la pragmatica del linguaggio. Forte nei poeti, scrittori e oratori.</p>
-                <div class="keywords">Punti di forza: Scrittura, lettura, spiegazione, dibattito.</div>
-            </article>
-            
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Logico-Matematica</h3>
-                <p>Capacità di analizzare problemi in modo logico, eseguire operazioni matematiche e investigare scientificamente. Coinvolge il pensiero deduttivo e induttivo, il riconoscimento di schemi e relazioni.</p>
-                <div class="keywords">Punti di forza: Problem solving, calcolo, pensiero critico, programmazione.</div>
-            </article>
+  <footer>
+    <p>2025 Intelligenze Multiple – Marco Abbo</p>
+  </footer>
 
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Spaziale</h3>
-                <p>Capacità di riconoscere e manipolare modelli su ampia scala (come navigatori e ingegneri) e modelli più circoscritti (come artisti e architetti). Riguarda la visualizzazione e la rappresentazione grafica.</p>
-                <div class="keywords">Punti di forza: Disegno, navigazione, visualizzazione, architettura.</div>
-            </article>
-            
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Corporeo-Cinestetica</h3>
-                <p>Capacità di utilizzare il proprio corpo per esprimere idee, sentimenti e risolvere problemi. Include l'abilità fisica generale, la coordinazione, l'equilibrio e la destrezza manuale.</p>
-                <div class="keywords">Punti di forza: Sport, danza, recitazione, artigianato, chirurgia.</div>
-            </article>
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
 
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Musicale</h3>
-                <p>Sensibilità al ritmo, al tono, alla melodia e al timbro della musica. Può manifestarsi nella composizione, nell'esecuzione, o nella capacità di apprezzare e analizzare le forme musicali.</p>
-                <div class="keywords">Punti di forza: Cantare, suonare strumenti, comporre, riconoscere toni.</div>
-            </article>
-
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Interpersonale</h3>
-                <p>Capacità di comprendere gli altri, le loro motivazioni, intenzioni e desideri. Permette di lavorare efficacemente in gruppo, empatizzare e comunicare in modo efficace. Essenziale per leader e insegnanti.</p>
-                <div class="keywords">Punti di forza: Empatia, comunicazione, leadership, negoziazione.</div>
-            </article>
-
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Intrapersonale</h3>
-                <p>Capacità di autocomprensione e autoconsapevolezza. Riguarda l'accesso ai propri sentimenti interiori, ai sogni, alla conoscenza dei propri limiti e dei propri obiettivi. La base della consapevolezza di sé.</p>
-                <div class="keywords">Punti di forza: Autoconsapevolezza, riflessione, auto-motivazione, conoscenza di sé.</div>
-            </article>
-            
-            <article class="neumorphic-card intelligenza-dettaglio-card">
-                <h3>Naturalistica</h3>
-                <p>Competenza nel discernere, classificare e comprendere le cose nel mondo naturale, come piante, animali, formazioni geologiche. Essenziale per biologi, agricoltori e ambientalisti.</p>
-                <div class="keywords">Punti di forza: Classificazione, osservazione della natura, cura degli animali/piante, ecologia.</div>
-            </article>
-        </section>
-
-    </main>
-
-    <footer class="neumorphic-footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 Intelligenze Multiple – Marco Abbo</p>
-        </div>
-    </footer>
 </body>
 </html>
-
-
-
-
-
