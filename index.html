@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <title>Home – Intelligenze Multiple</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<header class="neumorphic-header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Home page">
+                <span role="img" aria-label="Stella luminosa">🌟</span> Intelligenze Multiple
+            </a>
+            
+            <input type="checkbox" id="nav-toggle-input" class="hidden-control">
+            <label for="nav-toggle-input" class="nav-toggle-label" aria-label="Apri menu di navigazione">☰</label>
 
-  <header>
-    <nav class="navbar">
-      <div class="logo">🌟 Intelligenze Multiple</div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="confronto.html">Confronto</a></li>
-        <li><a href="consigli.html">Consigli</a></li>
-        <li><a href="esempi.html">Esempi</a></li>
-      </ul>
-    </nav>
-    <h1>Benvenuto nel sito delle Intelligenze Multiple</h1>
-    <img src="img/home.jpg" alt="Atleta">
-  </header>
+            <nav id="main-nav" class="nav-menu" role="navigation">
+                <ul role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tipi-intelligenza.html" class="active" aria-current="page">Tipi di Intelligenza</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="confronto.html">Confronto</a></li>
+                    <li><a href="consigli.html">Consigli</a></li>
+                    <li><a href="esempi.html">Esempi</a></li>
+                    <li><a href="faq.html">FAQ</a></li> </ul>
+            </nav>
+        </div>
+    </header>
 
   <main>
     <section>
@@ -59,6 +55,7 @@
 
 </body>
 </html>
+
 
 
 
