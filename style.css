@@ -1,132 +1,411 @@
-{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ================================================= */
+/* === 0. IMPOSTAZIONI GLOBALI E RESET === */
+/* ================================================= */
+* {
+    /* box-sizing: border-box assicura che padding e border non aumentino la larghezza totale degli elementi */
+    box-sizing: border-box;
+    /* Transizione globale dinamica (effetto molla per animazioni più evidenti) */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+}
+
+/* Palette di colori coerente */
+:root {
+    --colore-primario: #0077cc;     /* Blu scuro - per intestazioni e CTA */
+    --colore-secondario: #28a745;   /* Verde - per successi e selezioni */
+    --colore-sfondo: #f0f9ff;       /* Azzurro chiarissimo - sfondo per sezioni */
+    --colore-testo: #003366;        /* Blu scuro - per il testo principale */
+    --ombra-leggera: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --ombra-forte: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-  color: #003366;
-  padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    /* Background gradient per un effetto "piatto" più moderno e vibrante */
+    background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+    color: var(--colore-testo);
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2, h3 {
-  color: #0077cc;
-  margin-bottom: 15px;
+    color: var(--colore-primario);
+    margin-bottom: 15px;
+}
+
+/* ================================================= */
+/* === 1. HEADER E NAVIGAZIONE (MOLTO INTERATTIVI) === */
+/* ================================================= */
+header {
+    background-color: #b3e5fc;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 10px;
 }
 
 nav {
-  background-color: #b3e5fc;
-  padding: 10px 0;
-  margin-bottom: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #b3e5fc;
+    padding: 10px 0;
+    margin-bottom: 25px;
+    border-radius: 10px;
 }
 
 nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-  margin: 0 15px;
+    margin: 0 15px;
 }
 
 nav ul li a {
-  color: #004d99;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+    color: var(--colore-testo);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    /* Rende il link un blocco per l'animazione */
+    display: inline-block; 
 }
 
+/* Interattività Estrema dei Pulsanti di Navigazione */
 nav ul li a:hover {
-  color: #0077cc;
+    color: white;
+    background-color: #0077cc;
+    transform: translateY(-4px) scale(1.05); /* Sollevamento più marcato e leggero zoom */
+    box-shadow: 0 6px 12px rgba(0, 77, 153, 0.4);
 }
 
-main {
-  background-color: #f0f9ff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+nav ul li a:active {
+    transform: translateY(0); /* Effetto "pressione" */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+/* Stato Attivo */
+nav a[href="index.html"] { color: white; background-color: #005fa3; } /* Esempio per Home */
+nav a[href="tipi-intelligenza.html"] { color: white; background-color: #005fa3; }
+nav a[href="quiz.html"] { color: white; background-color: #005fa3; }
+nav a[href="confronto.html"] { color: white; background-color: #005fa3; }
+nav a[href="consigli.html"] { color: white; background-color: #005fa3; }
+nav a[href="esempi.html"] { color: white; background-color: #005fa3; }
 
-.content {
-  flex: 1 1 60%;
-}
 
+/* ================================================= */
+/* === 2. IMMAGINI (ANIMAZIONI AR/3D) === */
+/* ================================================= */
+
+/* Regola Generale per tutte le immagini */
 img {
-  margin: 10px 0;
-  border-radius: 8px;
-  max-width: 300px;
-  height: auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: block;
+    margin: 10px auto; 
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+    box-shadow: var(--ombra-leggera);
+    display: block;
+    transform-style: preserve-3d; /* Abilita effetti 3D */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
-ul {
-  list-style-type: disc;
-  margin-left: 20px;
-  margin-bottom: 20px;
+/* Animazione Interattiva Aggressiva (effetto AR) */
+img:hover {
+    transform: scale(1.1) rotateY(5deg); /* Zoom e rotazione 3D */
+    box-shadow: var(--ombra-forte); 
+    filter: brightness(1.1); 
 }
+
+/* Immagini Home e Confronto (più grandi) */
+header img {
+    max-height: 350px;
+    object-fit: cover;
+}
+
+
+/* ================================================= */
+/* === 3. LAYOUT E SEZIONI GENERALI === */
+/* ================================================= */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #f0f9ff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: perspective(1000px);
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+/* Layout Affiancato (Pagina Confronto) */
+.layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.layout .content {
+    flex: 2;
+}
+
+.layout .image-container {
+    flex: 1;
+}
+
+.layout img {
+    width: 100%;
+    height: auto;
+}
+
+/* ================================================= */
+/* === 4. COMPONENTI INTERATTIVI (CTA) === */
+/* ================================================= */
+button {
+    background-color: var(--colore-primario);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Pulsante CTA principale (es. nella Home) */
+.pulsante-cta {
+    display: inline-block;
+    background-color: var(--colore-secondario);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    text-decoration: none;
+    padding: 12px 25px;
+    margin-top: 20px;
+    width: auto !important;
+}
+
+.pulsante-cta:hover {
+    transform: translateY(-6px) scale(1.08); /* Effetto Molla in alto */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    background-color: #1e7e34;
+}
+
+
+/* ================================================= */
+/* === 5. STILI PAGINA ESEMPI (CARD DINAMICHE) === */
+/* ================================================= */
+.esempi-griglia {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+}
+
+.card-esempio {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--ombra-leggera);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: all 0.4s ease-out;
+    cursor: default;
+}
+
+.card-esempio img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    /* Reset della transizione specifica per la card */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
+}
+
+/* Interattività AR (più forte) sulle card di esempio */
+.card-esempio:hover {
+    transform: translateY(-10px); /* Sollevamento estremo */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
+}
+
+.card-esempio:hover img {
+    transform: scale(1.2) rotateX(5deg) rotateY(-5deg); /* Zoom e rotazione 3D aggressiva */
+    filter: brightness(1.2);
+}
+
+/* ================================================= */
+/* === 6. STILI PAGINA QUIZ (OPZIONI INTERATTIVE) === */
+/* ================================================= */
+/* Stile del bottone di calcolo del Quiz */
+#quizForm button {
+    width: 100%; 
+    padding: 15px;
+    background-color: var(--colore-primario);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#quizForm button:hover {
+    background-color: #005fa3; 
+    transform: translateY(-5px) scale(1.02); /* Animazione rimbalzo */
+    box-shadow: 0 10px 20px rgba(0, 77, 153, 0.5);
+}
+
+/* Stile Opzioni di Risposta (Label) */
+.question {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+label {
+    background-color: var(--colore-sfondo);
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 0.95em;
+    display: block; /* Aggiunto per funzionare con animazione */
+}
+
+/* Interattività Opzioni: Molla e Spostamento laterale */
+label:hover {
+    background-color: #e6f7ff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateX(10px) scale(1.02); /* Molla e spostamento a destra */
+}
+
+/* Stile Selezione (Checked) */
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+input[type="radio"]:checked + label {
+    background-color: var(--colore-secondario); 
+    color: white;
+    border-color: var(--colore-secondario);
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7); /* Effetto bagliore di conferma */
+    transform: scale(1.01); 
+}
+
+
+/* ================================================= */
+/* === 7. STILI TABELLA (CON MOVIMENTO) === */
+/* ================================================= */
 
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-table, th, td {
-  border: 1px solid #99ccff;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 th {
-  background-color: #cceeff;
-  color: #004d99;
+    padding: 15px 12px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
 }
 
 td {
-  background-color: #e6f7ff;
+    padding: 12px;
+    background-color: #f0f9ff;
+    border-bottom: 1px solid #cceeff;
+    transition: all 0.3s ease;
 }
 
-.quiz-question {
-  margin-bottom: 20px;
+/* Interattività riga Tabella: Sollevamento e Zoom */
+table tbody tr:hover {
+    background-color: #e6f7ff; 
+    transform: scale(1.015); /* Leggero zoom */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
-.quiz-options label {
-  display: block;
-  margin: 5px 0;
+/* ================================================= */
+/* === 8. STILI MODULO DI CONTATTO === */
+/* ================================================= */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 8px rgba(0, 119, 204, 0.4);
+    outline: none;
+    transform: scale(1.005); /* Effetto focus leggero */
 }
 
-button {
-  background-color: #0077cc;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  margin-top: 20px;
+.submit-button {
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-button:hover {
-  background-color: #005fa3;
+/* Interattività Pulsante Invio (Molto Dinamico) */
+.submit-button:hover {
+    background-color: #005fa3;
+    transform: translateY(-6px); /* Sollevamento Molla */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+/* ================================================= */
+/* === 9. RESPONSIVITÀ (MOBILE) === */
+/* ================================================= */
+
+@media (max-width: 768px) {
+    /* Layout Affiancato -> Impilamento */
+    .layout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .layout .content,
+    .layout .image-container {
+        flex: 1 1 100%; 
+    }
+
+    /* Ordine immagine su mobile */
+    .layout .image-container {
+        order: -1; 
+        margin-bottom: 20px;
+    }
+
+    /* Navigazione */
+    nav ul {
+        flex-wrap: wrap; 
+    }
+
+    nav ul li {
+        margin: 5px 8px;
+    }
+
+    /* Immagine Home */
+    header img {
+        max-height: 250px; 
+    }
+    
+    /* Griglia Esempi su mobile */
+    .esempi-griglia {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+}
