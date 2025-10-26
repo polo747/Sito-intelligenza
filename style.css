@@ -1,4 +1,7 @@
- {
+/* ================================================= */
+/* === 0. IMPOSTAZIONI GLOBALI E RESET === */
+/* ================================================= */
+* {
     box-sizing: border-box;
     /* Transizione globale dinamica (effetto molla per animazioni più evidenti) */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
@@ -28,6 +31,9 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
+/* ================================================= */
+/* === 1. HEADER E NAVIGAZIONE (LUMINESCENZA) === */
+/* ================================================= */
 header {
     background-color: #b3e5fc;
     padding: 20px 0;
@@ -39,11 +45,13 @@ header h1 {
     margin-bottom: 10px;
 }
 
+/* NAVIGAZIONE UNICA E SCURA PER EFFETTO NEON */
 nav {
-    background-color: #b3e5fc;
+    background-color: #005fa3; /* Blu scuro per contrastare la luminescenza */
     padding: 10px 0;
-    margin-bottom: 25px;
-    border-radius: 10px;
+    margin-bottom: 0; /* Unita all'header/main */
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Ombra per profondità */
 }
 
 nav ul {
@@ -60,19 +68,26 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--colore-testo);
+    color: white; /* Testo bianco */
     text-decoration: none;
     font-weight: bold;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 10px 20px; /* Padding aumentato */
+    border-radius: 25px; /* Bordi arrotondati */
     display: inline-block; 
+    border: 2px solid transparent; /* Bordo iniziale trasparente */
 }
 
+/* Interattività Estrema dei Pulsanti di Navigazione */
 nav ul li a:hover {
-    color: white;
-    background-color: #0077cc;
+    color: #b3e5fc; /* Colore testo leggero al passaggio */
+    background-color: rgba(179, 229, 252, 0.1); /* Sfondo leggermente trasparente */
     transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 77, 153, 0.4);
+    /* Effetto Luminescenza/Neon */
+    box-shadow: 
+        0 0 10px #b3e5fc, 
+        0 0 20px #b3e5fc, 
+        0 0 40px #0077cc; 
+    border-color: #b3e5fc; 
 }
 
 nav ul li a:active {
@@ -80,14 +95,26 @@ nav ul li a:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Stato Attivo (per indicare la pagina corrente) */
-nav a[href="index.html"] { color: white; background-color: #005fa3; } 
-nav a[href="tipi-intelligenza.html"] { color: white; background-color: #005fa3; }
-nav a[href="quiz.html"] { color: white; background-color: #005fa3; }
-nav a[href="confronto.html"] { color: white; background-color: #005fa3; }
-nav a[href="consigli.html"] { color: white; background-color: #005fa3; }
-nav a[href="esempi.html"] { color: white; background-color: #005fa3; }
+/* Stato Attivo (Luminescenza fissa sulla pagina corrente) */
+nav a[href="index.html"],
+nav a[href="tipi-intelligenza.html"],
+nav a[href="quiz.html"],
+nav a[href="confronto.html"],
+nav a[href="consigli.html"],
+nav a[href="esempi.html"] { 
+    color: white; 
+    background-color: #0077cc; 
+    box-shadow: 
+        0 0 15px #b3e5fc,
+        0 0 25px #b3e5fc;
+}
 
+
+/* ================================================= */
+/* === 2. IMMAGINI (ANIMAZIONI AR/3D) === */
+/* ================================================= */
+
+/* Regola Generale per tutte le immagini */
 img {
     margin: 10px auto; 
     border-radius: 8px;
@@ -111,6 +138,11 @@ header img {
     max-height: 350px;
     object-fit: cover;
 }
+
+
+/* ================================================= */
+/* === 3. LAYOUT E SEZIONI GENERALI === */
+/* ================================================= */
 main {
     max-width: 1200px;
     margin: 40px auto;
@@ -149,6 +181,10 @@ section {
     width: 100%;
     height: auto;
 }
+
+/* ================================================= */
+/* === 4. COMPONENTI INTERATTIVI (CTA) === */
+/* ================================================= */
 button {
     background-color: var(--colore-primario);
     color: #fff;
@@ -176,6 +212,11 @@ button {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     background-color: #1e7e34;
 }
+
+
+/* ================================================= */
+/* === 5. STILI PAGINA ESEMPI (CARD DINAMICHE - Immagini Uniformi) === */
+/* ================================================= */
 .esempi-griglia {
     list-style: none;
     padding: 0;
@@ -195,7 +236,7 @@ button {
     cursor: default;
 }
 
-/* REGOLA MODIFICATA: L'altezza è stata ridotta a 150px per rimpicciolire l'immagine e garantirne l'uniformità (tutte uguali). */
+/* Immagini ridotte e uniformi (richiesta utente) */
 .card-esempio img {
     width: 100%;
     height: 150px; /* <--- ALTEZZA RIDOTTA E FISSA */
@@ -204,7 +245,7 @@ button {
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
-/* Interattività AR (più forte) sulle card di esempio (invariato) */
+/* Interattività AR (più forte) sulle card di esempio */
 .card-esempio:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
@@ -214,6 +255,11 @@ button {
     transform: scale(1.2) rotateX(5deg) rotateY(-5deg);
     filter: brightness(1.2);
 }
+
+/* ================================================= */
+/* === 6. STILI PAGINA QUIZ (OPZIONI INTERATTIVE - Correzione Bug) === */
+/* ================================================= */
+/* Stile del bottone di calcolo del Quiz */
 #quizForm button {
     width: 100%; 
     padding: 15px;
@@ -255,8 +301,8 @@ label:hover {
     transform: translateX(10px) scale(1.02);
 }
 
+/* --- SOLUZIONE BUG QUIZ: rende l'input cliccabile tramite la label --- */
 input[type="radio"] {
-    /* Sposta l'elemento nativo fuori dalla vista ma lo lascia cliccabile tramite la label */
     position: absolute;
     left: -9999px; 
     opacity: 0; 
@@ -286,6 +332,11 @@ input[type="radio"]:checked + label {
     color: var(--colore-primario);
     font-size: 1.3em;
 }
+
+
+/* ================================================= */
+/* === 7. STILI TABELLA (CON MOVIMENTO) === */
+/* ================================================= */
 
 table {
     width: 100%;
@@ -318,6 +369,9 @@ table tbody tr:hover {
     cursor: pointer;
 }
 
+/* ================================================= */
+/* === 8. STILI MODULO DI CONTATTO === */
+/* ================================================= */
 .contact-form {
     max-width: 600px;
     margin: 20px auto;
@@ -372,6 +426,11 @@ table tbody tr:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
+
+/* ================================================= */
+/* === 9. RESPONSIVITÀ (MOBILE) === */
+/* ================================================= */
+
 @media (max-width: 768px) {
     .layout {
         flex-direction: column;
@@ -405,4 +464,3 @@ table tbody tr:hover {
         gap: 20px;
     }
 }
-
