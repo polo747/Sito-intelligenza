@@ -1,18 +1,14 @@
-/* ================================================= */
-/* === 0. IMPOSTAZIONI GLOBALI E RESET === */
-/* ================================================= */
-* {
+{
     box-sizing: border-box;
-    /* Transizione globale dinamica (effetto molla per animazioni più evidenti) */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
 }
 
 /* Palette di colori coerente */
 :root {
-    --colore-primario: #0077cc;     /* Blu scuro - per intestazioni e CTA */
-    --colore-secondario: #28a745;   /* Verde - per successi e selezioni */
-    --colore-sfondo: #f0f9ff;       /* Azzurro chiarissimo - sfondo per sezioni */
-    --colore-testo: #003366;        /* Blu scuro - per il testo principale */
+    --colore-primario: #0077cc;   
+    --colore-secondario: #28a745;   
+    --colore-sfondo: #f0f9ff;      
+    --colore-testo: #003366;       
     --ombra-leggera: 0 4px 10px rgba(0, 0, 0, 0.15);
     --ombra-forte: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
@@ -31,9 +27,6 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-/* ================================================= */
-/* === 1. HEADER E NAVIGAZIONE (LUMINESCENZA) === */
-/* ================================================= */
 header {
     background-color: #b3e5fc;
     padding: 20px 0;
@@ -45,13 +38,12 @@ header h1 {
     margin-bottom: 10px;
 }
 
-/* NAVIGAZIONE UNICA E SCURA PER EFFETTO NEON */
 nav {
-    background-color: #005fa3; /* Blu scuro per contrastare la luminescenza */
+    background-color: #005fa3; 
     padding: 10px 0;
-    margin-bottom: 0; /* Unita all'header/main */
+    margin-bottom: 0;
     border-radius: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Ombra per profondità */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -68,21 +60,20 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white; /* Testo bianco */
+    color: white; 
     text-decoration: none;
     font-weight: bold;
-    padding: 10px 20px; /* Padding aumentato */
-    border-radius: 25px; /* Bordi arrotondati */
+    padding: 10px 20px; 
+    border-radius: 25px; 
     display: inline-block; 
-    border: 2px solid transparent; /* Bordo iniziale trasparente */
+    border: 2px solid transparent; 
 }
 
-/* Interattività Estrema dei Pulsanti di Navigazione */
+
 nav ul li a:hover {
-    color: #b3e5fc; /* Colore testo leggero al passaggio */
-    background-color: rgba(179, 229, 252, 0.1); /* Sfondo leggermente trasparente */
+    color: #b3e5fc; 
+    background-color: rgba(179, 229, 252, 0.1);
     transform: translateY(-4px) scale(1.05);
-    /* Effetto Luminescenza/Neon */
     box-shadow: 
         0 0 10px #b3e5fc, 
         0 0 20px #b3e5fc, 
@@ -95,7 +86,6 @@ nav ul li a:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Stato Attivo (Luminescenza fissa sulla pagina corrente) */
 nav a[href="index.html"],
 nav a[href="tipi-intelligenza.html"],
 nav a[href="quiz.html"],
@@ -108,13 +98,6 @@ nav a[href="esempi.html"] {
         0 0 15px #b3e5fc,
         0 0 25px #b3e5fc;
 }
-
-
-/* ================================================= */
-/* === 2. IMMAGINI (ANIMAZIONI AR/3D) === */
-/* ================================================= */
-
-/* Regola Generale per tutte le immagini */
 img {
     margin: 10px auto; 
     border-radius: 8px;
@@ -126,23 +109,18 @@ img {
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
-/* Animazione Interattiva Aggressiva (effetto AR) */
 img:hover {
     transform: scale(1.1) rotateY(5deg);
     box-shadow: var(--ombra-forte); 
     filter: brightness(1.1); 
 }
 
-/* Immagini Home e Confronto (più grandi) */
 header img {
     max-height: 350px;
     object-fit: cover;
 }
 
 
-/* ================================================= */
-/* === 3. LAYOUT E SEZIONI GENERALI === */
-/* ================================================= */
 main {
     max-width: 1200px;
     margin: 40px auto;
@@ -161,7 +139,6 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
-/* Layout Affiancato (Pagina Confronto e Consigli) */
 .layout {
     display: flex;
     gap: 30px;
@@ -182,9 +159,6 @@ section {
     height: auto;
 }
 
-/* ================================================= */
-/* === 4. COMPONENTI INTERATTIVI (CTA) === */
-/* ================================================= */
 button {
     background-color: var(--colore-primario);
     color: #fff;
@@ -196,7 +170,6 @@ button {
     margin-top: 20px;
 }
 
-/* Pulsante CTA principale (es. nella Home) */
 .pulsante-cta {
     display: inline-block;
     background-color: var(--colore-secondario);
@@ -213,10 +186,6 @@ button {
     background-color: #1e7e34;
 }
 
-
-/* ================================================= */
-/* === 5. STILI PAGINA ESEMPI (CARD DINAMICHE - Immagini Uniformi) === */
-/* ================================================= */
 .esempi-griglia {
     list-style: none;
     padding: 0;
@@ -236,16 +205,14 @@ button {
     cursor: default;
 }
 
-/* Immagini ridotte e uniformi (richiesta utente) */
 .card-esempio img {
     width: 100%;
-    height: 150px; /* <--- ALTEZZA RIDOTTA E FISSA */
-    object-fit: cover; /* Mantiene le proporzioni e riempie lo spazio */
+    height: 150px; 
+    object-fit: cover; 
     margin-bottom: 15px;
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
-/* Interattività AR (più forte) sulle card di esempio */
 .card-esempio:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
@@ -256,10 +223,6 @@ button {
     filter: brightness(1.2);
 }
 
-/* ================================================= */
-/* === 6. STILI PAGINA QUIZ (OPZIONI INTERATTIVE - Correzione Bug) === */
-/* ================================================= */
-/* Stile del bottone di calcolo del Quiz */
 #quizForm button {
     width: 100%; 
     padding: 15px;
@@ -273,7 +236,6 @@ button {
     box-shadow: 0 10px 20px rgba(0, 77, 153, 0.5);
 }
 
-/* Stile Opzioni di Risposta (Label) */
 .question {
     background-color: white;
     border: 1px solid #dee2e6;
@@ -294,14 +256,12 @@ label {
     display: block; 
 }
 
-/* Interattività Opzioni: Molla e Spostamento laterale */
 label:hover {
     background-color: #e6f7ff; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transform: translateX(10px) scale(1.02);
 }
 
-/* --- SOLUZIONE BUG QUIZ: rende l'input cliccabile tramite la label --- */
 input[type="radio"] {
     position: absolute;
     left: -9999px; 
@@ -334,10 +294,6 @@ input[type="radio"]:checked + label {
 }
 
 
-/* ================================================= */
-/* === 7. STILI TABELLA (CON MOVIMENTO) === */
-/* ================================================= */
-
 table {
     width: 100%;
     border-collapse: collapse;
@@ -361,7 +317,6 @@ td {
     transition: all 0.3s ease;
 }
 
-/* Interattività riga Tabella: Sollevamento e Zoom */
 table tbody tr:hover {
     background-color: #e6f7ff; 
     transform: scale(1.015);
@@ -369,9 +324,6 @@ table tbody tr:hover {
     cursor: pointer;
 }
 
-/* ================================================= */
-/* === 8. STILI MODULO DI CONTATTO === */
-/* ================================================= */
 .contact-form {
     max-width: 600px;
     margin: 20px auto;
@@ -427,10 +379,6 @@ table tbody tr:hover {
 }
 
 
-/* ================================================= */
-/* === 9. RESPONSIVITÀ (MOBILE) === */
-/* ================================================= */
-
 @media (max-width: 768px) {
     .layout {
         flex-direction: column;
@@ -464,3 +412,4 @@ table tbody tr:hover {
         gap: 20px;
     }
 }
+
