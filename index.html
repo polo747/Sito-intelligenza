@@ -1,84 +1,61 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 Intelligenze Multiple | Home</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Home – Intelligenze Multiple</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="neumorphic-header" role="banner">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="Home page">
-                <span role="img" aria-label="Stella luminosa">🌟</span> Intelligenze Multiple
-            </a>
-            
-            <input type="checkbox" id="nav-toggle-input" class="hidden-control">
-            <label for="nav-toggle-input" class="nav-toggle-label" aria-label="Apri menu di navigazione">☰</label>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌟 Intelligenze Multiple</div>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="confronto.html">Confronto</a></li>
+        <li><a href="consigli.html">Consigli</a></li>
+        <li><a href="esempi.html">Esempi</a></li>
+      </ul>
+    </nav>
+    <h1>Benvenuto nel sito delle Intelligenze Multiple</h1>
+    <img src="img/home.jpg" alt="Atleta">
+  </header>
 
-            <nav id="main-nav" class="nav-menu" role="navigation">
-                <ul role="list">
-                    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-                    <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
-                    <li><a href="quiz.html">Quiz</a></li>
-                    <li><a href="confronto.html">Confronto</a></li>
-                    <li><a href="consigli.html">Consigli</a></li>
-                    <li><a href="esempi.html">Esempi</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <main>
+    <section>
+      <h2>Cos'è l'intelligenza?</h2>
+      <p>
+        L’intelligenza è la capacità mentale di comprendere, elaborare informazioni, adattarsi ai cambiamenti, ragionare in modo coerente e apprendere dall’esperienza.
+        Include funzioni come la memoria, l’attenzione, la percezione, il linguaggio, il pensiero astratto e la capacità di risolvere problemi.
+        Non è un singolo tratto, ma un insieme dinamico di abilità cognitive che operano insieme per permettere a un individuo di affrontare situazioni complesse, 
+        prendere decisioni e interagire con l’ambiente in modo efficace.
+        Infatti secondo la teoria di Howard Gardner,
+        esistono almeno otto forme diverse di intelligenza che ogni persona possiede in misura diversa.
+      </p>
+    </section>
 
-    <main id="content" role="main">
-        <section class="hero-section">
-            <div class="container">
-                <h1>Scopri il Tuo Potenziale <span class="highlight">Unico</span></h1>
-                <p class="subtitle">La teoria delle intelligenze multiple di Howard Gardner rivoluziona il modo in cui pensiamo al talento e all'apprendimento.</p>
-                <a href="quiz.html" class="neumorphic-button large-button" role="button">Fai il Quiz e Inizia</a>
-            </div>
-        </section>
+    <section>
+      <h2>Esplora il sito</h2>
+      <ul>
+        <li><strong>Tipi di Intelligenza:</strong> scopri le 8 intelligenze e come si manifestano</li>
+        <li><strong>Quiz:</strong> rispondi a poche domande e scopri la tua intelligenza dominante</li>
+        <li><strong>Confronto:</strong> rifletti su come sviluppare al meglio le tue abilità personali</li>
+      </ul>
+    </section>
+  </main>
 
-        <section class="container mt-40">
-            <div class="content-image-grid">
-                <div class="content">
-                    <h2 class="neumorphic-card">Cos'è l'Intelligenza Multipla?</h2>
-                    <p>Contrariamente al tradizionale concetto di QI, Gardner propone che l'intelligenza non sia un'unica capacità unitaria, ma un insieme di diverse 'intelligenze'. Ognuno di noi possiede una combinazione unica di queste abilità, che definiscono il nostro modo di imparare, risolvere problemi e interagire col mondo.</p>
-                    
-                    <ul class="neumorphic-card">
-                        <li>**Non è solo la logica:** Riconoscimento del valore di abilità come l'arte, la musica e la comunicazione interpersonale.</li>
-                        <li>**È dinamica:** Tutte le intelligenze possono essere sviluppate e potenziate attraverso l'educazione e la pratica mirata.</li>
-                    </ul>
-                </div>
-                
-                <div class="neumorphic-card image-gallery-placeholder" role="img" aria-label="Placeholder di una Galleria Immagini delle 8 Intelligenze">
-                    <img src="img/placeholder_intelligenze.jpg" alt="Rappresentazione visiva di diverse sfere del cervello interconnesse">
-                    <p class="text-center mt-20" style="font-size: 0.9em; color: var(--color-text-light);">Immagine: Le sfere del talento.</p>
-                </div>
-            </div>
-        </section>
+  <footer>
+    <p>2025 Intelligenze Multiple – Marco Abbo</p>
+  </footer>
 
-        <section class="container mt-40">
-            <h2 class="text-center">Guarda il Video Introduttivo</h2>
-            <div class="neumorphic-card video-responsive" role="video" aria-label="Video esplicativo sulla teoria di Gardner">
-                <iframe 
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    title="Video sulla Teoria delle Intelligenze Multiple"
-                ></iframe>
-            </div>
-        </section>
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
 
-    </main>
-
-    <footer class="neumorphic-footer" role="contentinfo">
-        <div class="container">
-            <p>&copy; 2025 Intelligenze Multiple – Marco Abbo</p>
-        </div>
-    </footer>
 </body>
 </html>
