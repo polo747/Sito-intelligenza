@@ -1,395 +1,284 @@
-/* ----------------------------------------------------
- * 1. VARIABILI E FONDAMENTA (WCAG AA/AAA COMPLIANT)
- * ---------------------------------------------------- */
-
-:root {
-    /* Nuova Palette Neumorphic, più vivace e saturata */
-    --color-primary: #007bff; /* Blu acceso per focus e CTA */
-    --color-secondary: #ff4757; /* Rosso/Arancio vivace per highlight */
-    --color-accent: #2ed573; /* Verde per successo/positività */
-    
-    /* Sfondi Neumorphic */
-    --color-background-light: #f5f8fb; /* Sfondo principale */
-    --color-background-dark: #e8ecf1;  /* Sfondo per elementi più scuri/hover */
-    --color-background-hover: #dfe4e9; /* Sfondo per interazione */
-    
-    /* Testo (WCAG Compliant su sfondi light) */
-    --color-text: #2f3640; /* Blu scuro (quasi nero) */
-    --color-text-light: #7f8c8d; /* Testo secondario */
-
-    /* Ombre Neumorphic */
-    --shadow-light: 8px 8px 16px rgba(180, 190, 200, 0.7), -8px -8px 16px rgba(255, 255, 255, 1);
-    --shadow-inset: inset 4px 4px 8px rgba(180, 190, 200, 0.7), inset -4px -4px 8px rgba(255, 255, 255, 1);
-    --shadow-inset-light: inset 2px 2px 4px rgba(180, 190, 200, 0.5), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
-
-    /* Misure e Transizioni */
-    --border-radius: 12px;
-    --border-radius-small: 6px;
-    --transition-speed: 0.3s;
-    --container-width: 1200px;
-}
-
-/* ----------------------------------------------------
- * 2. BASELINE E TIPOGRAFIA
- * ---------------------------------------------------- */
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif; 
-    line-height: 1.6;
-    background-color: var(--color-background-light);
-    color: var(--color-text);
-    padding: 0;
-    transition: background-color var(--transition-speed);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, #ecf0f1, #d6eaf8);
+  color: #2c3e50;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
 }
 
-a {
-    color: var(--color-primary);
-    text-decoration: none;
-    transition: color var(--transition-speed);
-}
-
-a:hover {
-    color: var(--color-secondary);
-}
-
-main {
-    padding: 20px 0;
-}
-
-.container {
-    width: 90%;
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0 10px;
+body.dark-mode {
+  background: linear-gradient(to bottom right, #2c3e50, #1c2833);
+  color: #ecf0f1;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    color: var(--color-text);
-    margin-bottom: 15px;
+  color: #3498db;
+  margin-bottom: 15px;
 }
 
-h1 { font-size: 2.5em; }
-h2 { font-size: 2em; margin-top: 30px; }
-h3 { font-size: 1.4em; }
-
-.highlight {
-    color: var(--color-secondary);
+nav {
+  background-color: #2980b9;
+  padding: 12px 0;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s;
 }
 
-ul, ol {
-    margin: 15px 0 20px 25px;
-}
-li {
-    margin-bottom: 8px;
+body.dark-mode nav {
+  background-color: #1f618d;
 }
 
-/* Nasconde gli input di controllo (usati per logica CSS) */
-.hidden-control {
-    display: none;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* ----------------------------------------------------
- * 3. NEUMORPHIC COMPONENTS E MICRO-INTERAZIONI
- * ---------------------------------------------------- */
-
-.neumorphic-header {
-    background-color: var(--color-background-light);
-    box-shadow: var(--shadow-light);
-    padding: 15px 0;
+nav ul li {
+  margin: 0 20px;
 }
 
-.neumorphic-card {
-    background-color: var(--color-background-light);
-    box-shadow: var(--shadow-light);
-    border-radius: var(--border-radius);
-    padding: 20px;
-    margin-bottom: 25px;
-    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+nav ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
 }
 
-.neumorphic-card:hover:not(.quiz-result) {
-    transform: translateY(-2px);
-    box-shadow: 10px 10px 20px rgba(180, 190, 200, 0.8), -10px -10px 20px rgba(255, 255, 255, 1);
+nav ul li a:hover {
+  color: #f1c40f;
 }
 
-.neumorphic-button {
-    display: inline-block;
-    padding: 12px 25px;
-    margin-top: 15px;
-    text-decoration: none;
-    font-weight: 600;
-    color: var(--color-primary);
-    background-color: var(--color-background-light);
-    border: none;
-    border-radius: 50px;
-    box-shadow: var(--shadow-light);
-    transition: all var(--transition-speed) ease-in-out;
-    cursor: pointer;
-    text-align: center;
+main {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.neumorphic-button:hover {
-    color: var(--color-secondary);
-    box-shadow: 6px 6px 12px rgba(180, 190, 200, 0.7), -6px -6px 12px rgba(255, 255, 255, 1);
+body.dark-mode main {
+  background-color: #34495e;
+  color: #ecf0f1;
 }
 
-.neumorphic-button:active {
-    box-shadow: var(--shadow-inset);
-    transform: scale(0.98);
+.layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
 }
 
-.neumorphic-footer {
-    background-color: var(--color-background-dark);
-    box-shadow: var(--shadow-inset);
-    padding: 20px 0;
-    color: var(--color-text-light);
-    text-align: center;
-    margin-top: 40px;
-    font-size: 0.9em;
+.content {
+  flex: 1 1 60%;
 }
 
-.text-center { text-align: center; }
-.mt-20 { margin-top: 20px; }
-.mt-40 { margin-top: 40px; }
-.small-button { padding: 8px 15px; font-size: 0.9em; }
-
-/* Placeholder Video Responsive */
-.video-responsive {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    margin: 20px 0;
+img {
+  margin: 10px 0;
+  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.video-responsive iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--border-radius-small);
-    box-shadow: 4px 4px 8px rgba(180, 190, 200, 0.7);
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ----------------------------------------------------
- * 4. LAYOUTS RESPONSIVE (MOBILE-FIRST)
- * ---------------------------------------------------- */
+ul {
+  list-style-type: disc;
+  margin-left: 25px;
+  margin-bottom: 20px;
+}
 
-/* Header e Navigazione */
-.neumorphic-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #aed6f1;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+}
+
+th {
+  background-color: #d6eaf8;
+  color: #2c3e50;
+}
+
+td {
+  background-color: #ebf5fb;
+}
+
+.quiz-question {
+  margin-bottom: 20px;
+}
+
+.quiz-options label {
+  display: block;
+  margin: 6px 0;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #2c3e50;
+  transition: all 0.2s ease;
+  margin-top: 20px;
+  position: relative;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:active {
+  top: 2px;
+  box-shadow: 0 2px 0 #2c3e50;
+}
+
+/* Animazione di entrata */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+.navbar {
+  background: linear-gradient(270deg, #3498db, #6dd5fa, #2980b9);
+  background-size: 600% 600%;
+  animation: gradientFlow 10s ease infinite;
+  padding: 16px 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--color-primary);
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
 }
 
-/* Stato Iniziale del Menu (Nascosto su Mobile) */
-.nav-toggle-label {
-    display: block; 
-    font-size: 1.8em;
-    cursor: pointer;
-    color: var(--color-primary);
-    padding: 5px 10px;
-    order: 2; /* Mantiene l'icona a destra */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
 }
 
-.nav-menu {
-    display: none; /* Nascosto di default */
-    width: 100%;
-    margin-top: 15px;
-    order: 3; /* Finisce sotto logo e toggle */
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* Logica Pura CSS per Toggle Menu */
-#nav-toggle-input:checked ~ .nav-menu {
-    display: block; /* Mostra il menu quando la checkbox è spuntata */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #f1c40f;
+  transition: width 0.3s ease;
 }
 
-.nav-menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding-top: 10px;
-    margin: 0;
+.nav-links li a:hover {
+  color: #f1c40f;
 }
 
-.nav-menu ul li a {
-    display: block;
-    padding: 10px 15px;
-    border-radius: var(--border-radius-small);
-    color: var(--color-text);
-    font-weight: 600;
-    transition: all var(--transition-speed);
+.nav-links li a:hover::after {
+  width: 100%;
 }
 
-.nav-menu ul li a:hover,
-.nav-menu ul li a.active {
-    background-color: var(--color-background-dark);
-    box-shadow: var(--shadow-inset-light);
-    color: var(--color-secondary);
+.nav-links li a:active {
+  transform: scale(0.95);
 }
 
-/* Hero Section */
-.hero-section {
-    text-align: center;
-    padding: 40px 0 20px;
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Layouts Griglia */
-.grid-3-cols {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    margin-top: 20px;
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
 }
 
-.content-image-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 25px;
-    align-items: center;
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+    animation: fadeInMenu 0.5s ease forwards;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 }
-
-/* Stili Tabella e Quiz non cambiano significativamente, rimangono come da tua richiesta precedente. */
-
-/* ----------------------------------------------------
- * 5. STILI FAQ / ACCORDION (Pura CSS)
- * ---------------------------------------------------- */
-
-.accordion-container {
-    padding: 10px;
-}
-
-.accordion-item {
-    margin-bottom: 15px;
-    padding: 0;
-    overflow: hidden;
-    position: relative; /* Per posizionare la label */
-}
-
-.accordion-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    text-align: left;
-    padding: 15px 20px;
-    font-size: 1.1em;
-    font-weight: 600;
-    color: var(--color-text);
-    cursor: pointer;
-    background: none;
-    transition: background-color var(--transition-speed);
-}
-
-.accordion-label::after {
-    content: '+';
-    font-size: 1.5em;
-    color: var(--color-primary);
-    transition: transform var(--transition-speed);
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 20px;
-    /* Usa la visibilità per la transizione fluida */
-    visibility: hidden;
-    opacity: 0;
-    transition: max-height 0.4s ease-in-out, visibility 0.4s, opacity 0.4s;
-    background-color: var(--color-background-dark);
-}
-
-.accordion-content p {
-    padding: 15px 0 20px;
-    margin: 0;
-    border-top: 1px solid var(--color-background-light);
-}
-
-/* Logica Pura CSS per Accordion */
-#faq-1:checked ~ .accordion-label[for="faq-1"]::after,
-#faq-2:checked ~ .accordion-label[for="faq-2"]::after,
-#faq-3:checked ~ .accordion-label[for="faq-3"]::after,
-#faq-4:checked ~ .accordion-label[for="faq-4"]::after {
-    content: '−';
-    transform: rotate(180deg);
-    color: var(--color-secondary);
-}
-
-#faq-1:checked ~ .accordion-content-1,
-#faq-2:checked ~ .accordion-content-2,
-#faq-3:checked ~ .accordion-content-3,
-#faq-4:checked ~ .accordion-content-4 {
-    max-height: 500px; /* Valore grande per far scorrere il contenuto */
-    visibility: visible;
-    opacity: 1;
-}
-
-
-/* ----------------------------------------------------
- * 6. MEDIA QUERIES (Mobile-First)
- * ---------------------------------------------------- */
-
-@media (min-width: 768px) {
-    
-    /* Disabilita Toggle Menu su Desktop */
-    .nav-toggle-label {
-        display: none;
-    }
-    
-    .nav-menu {
-        display: block !important; /* Forza la visualizzazione su desktop */
-        width: auto;
-        margin-top: 0;
-        order: initial;
-    }
-    .nav-menu ul {
-        flex-direction: row;
-        gap: 20px;
-        padding-top: 0;
-    }
-    .nav-menu ul li a {
-        padding: 5px 10px;
-    }
-
-    /* Layouts Griglia */
-    .grid-3-cols {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .content-image-grid {
-        grid-template-columns: 2fr 1fr; 
-    }
-}
-
-@media (min-width: 1024px) {
-    
-    h1 { font-size: 3em; }
-    h2 { font-size: 2.5em; }
-
-    .grid-3-cols {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 
