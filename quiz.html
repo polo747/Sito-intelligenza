@@ -1,175 +1,170 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz Intelligenze Multiple</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .question { margin-bottom: 20px; }
-    label { display: block; margin: 5px 0; }
-    #result { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
-  </style>
+  <meta charset="UTF-8">
+  <title>Quiz Intelligenze Multiple</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .question { margin-bottom: 20px; }
+    label { display: block; margin: 5px 0; }
+    #result { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Scopri la tua intelligenza prevalente!</h1>
+    <nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
+    <li><a href="quiz.html">Quiz</a></li>
+    <li><a href="confronto.html">Confronto</a></li>
+    <li><a href="consigli.html">Consigli</a></li>
+    <li><a href="esempi.html">Esempi</a></li>
+  </ul>
+</nav>
+  </header>
 
- <header>
-    <nav class="navbar">
-      <div class="logo">🌟 Intelligenze Multiple</div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="confronto.html">Confronto</a></li>
-        <li><a href="consigli.html">Consigli</a></li>
-        <li><a href="esempi.html">Esempi</a></li>
-      </ul>
-    </nav>
-  </header>
+  <main>
+    <form id="quizForm">
+      <div class="question">
+        <p>1. Preferisco esprimermi...</p>
+        <label><input type="radio" name="q1" value="linguistica"> Attraverso la scrittura o il parlare</label>
+        <label><input type="radio" name="q1" value="musicale"> Cantando o suonando</label>
+        <label><input type="radio" name="q1" value="corporea"> Muovendomi o con il corpo</label>
+      </div>
 
-  <main>
-    <form id="quizForm">
-      <div class="question">
-        <p>1. Preferisco esprimermi...</p>
-        <label><input type="radio" name="q1" value="linguistica"> Attraverso la scrittura o il parlare</label>
-        <label><input type="radio" name="q1" value="musicale"> Cantando o suonando</label>
-        <label><input type="radio" name="q1" value="corporea"> Muovendomi o con il corpo</label>
-      </div>
+      <div class="question">
+        <p>2. Nei miei momenti liberi preferisco...</p>
+        <label><input type="radio" name="q2" value="logico"> Risolvere enigmi o problemi logici</label>
+        <label><input type="radio" name="q2" value="naturalistica"> Stare a contatto con la natura</label>
+        <label><input type="radio" name="q2" value="intrapersonale"> Riflettere su me stesso</label>
+      </div>
 
-      <div class="question">
-        <p>2. Nei miei momenti liberi preferisco...</p>
-        <label><input type="radio" name="q2" value="logico"> Risolvere enigmi o problemi logici</label>
-        <label><input type="radio" name="q2" value="naturalistica"> Stare a contatto con la natura</label>
-        <label><input type="radio" name="q2" value="intrapersonale"> Riflettere su me stesso</label>
-      </div>
+      <div class="question">
+        <p>3. A scuola mi piaceva di più...</p>
+        <label><input type="radio" name="q3" value="spaziale"> Disegnare o visualizzare oggetti</label>
+        <label><input type="radio" name="q3" value="interpersonale"> Lavorare in gruppo</label>
+        <label><input type="radio" name="q3" value="linguistica"> Leggere e scrivere</label>
+      </div>
 
-      <div class="question">
-        <p>3. A scuola mi piaceva di più...</p>
-        <label><input type="radio" name="q3" value="spaziale"> Disegnare o visualizzare oggetti</label>
-        <label><input type="radio" name="q3" value="interpersonale"> Lavorare in gruppo</label>
-        <label><input type="radio" name="q3" value="linguistica"> Leggere e scrivere</label>
-      </div>
+      <div class="question">
+        <p>4. Quando devo risolvere un problema...</p>
+        <label><input type="radio" name="q4" value="logico"> Lo analizzo con logica e dati</label>
+        <label><input type="radio" name="q4" value="corporea"> Preferisco agire fisicamente</label>
+        <label><input type="radio" name="q4" value="interpersonale"> Parlo con gli altri per trovare una soluzione</label>
+      </div>
 
-      <div class="question">
-        <p>4. Quando devo risolvere un problema...</p>
-        <label><input type="radio" name="q4" value="logico"> Lo analizzo con logica e dati</label>
-        <label><input type="radio" name="q4" value="corporea"> Preferisco agire fisicamente</label>
-        <label><input type="radio" name="q4" value="interpersonale"> Parlo con gli altri per trovare una soluzione</label>
-      </div>
+      <div class="question">
+        <p>5. Mi sento più a mio agio...</p>
+        <label><input type="radio" name="q5" value="musicale"> In ambienti musicali</label>
+        <label><input type="radio" name="q5" value="spaziale"> Usando immagini o mappe</label>
+        <label><input type="radio" name="q5" value="naturalistica"> All'aperto, nella natura</label>
+      </div>
+	
+      <div class="question">
+ 	<p>6. Quando ascolto una storia...</p>
+  	<label><input type="radio" name="q6" value="linguistica"> Mi concentro su come è raccontata</label>
+  	<label><input type="radio" name="q6" value="spaziale"> La visualizzo nella mia mente</label>
+  	<label><input type="radio" name="q6" value="interpersonale"> Mi immedesimo nei personaggi</label>
+      </div>
 
-      <div class="question">
-        <p>5. Mi sento più a mio agio...</p>
-        <label><input type="radio" name="q5" value="musicale"> In ambienti musicali</label>
-        <label><input type="radio" name="q5" value="spaziale"> Usando immagini o mappe</label>
-        <label><input type="radio" name="q5" value="naturalistica"> All'aperto, nella natura</label>
-      </div>
+      <div class="question">
+  	<p>7. Mi sento realizzato quando...</p>
+ 	<label><input type="radio" name="q7" value="corporea"> Uso il corpo per creare o fare qualcosa</label>
+  	<label><input type="radio" name="q7" value="musicale"> Creo o ascolto musica</label>
+ 	<label><input type="radio" name="q7" value="logico"> Risolvo qualcosa in modo razionale</label>
+      </div>
 
-      <div class="question">
-        <p>6. Quando ascolto una storia...</p>
-        <label><input type="radio" name="q6" value="linguistica"> Mi concentro su come è raccontata</label>
-        <label><input type="radio" name="q6" value="spaziale"> La visualizzo nella mia mente</label>
-        <label><input type="radio" name="q6" value="interpersonale"> Mi immedesimo nei personaggi</label>
-      </div>
+      <div class="question">
+  	<p>8. Trovo facile...</p>
+  	<label><input type="radio" name="q8" value="naturalistica"> Riconoscere piante, animali o fenomeni naturali</label>
+  	<label><input type="radio" name="q8" value="intrapersonale"> Capire cosa provo e perché</label>
+  	<label><input type="radio" name="q8" value="interpersonale"> Capire cosa provano gli altri</label>
+      </div>
 
-      <div class="question">
-        <p>7. Mi sento realizzato quando...</p>
-        <label><input type="radio" name="q7" value="corporea"> Uso il corpo per creare o fare qualcosa</label>
-        <label><input type="radio" name="q7" value="musicale"> Creo o ascolto musica</label>
-        <label><input type="radio" name="q7" value="logico"> Risolvo qualcosa in modo razionale</label>
-      </div>
+      <div class="question">
+  	<p>9. Durante un lavoro di gruppo, io...</p>
+  	<label><input type="radio" name="q9" value="interpersonale"> Coordino e ascolto tutti</label>
+  	<label><input type="radio" name="q9" value="logico"> Mi concentro sulla strategia</label>
+  	<label><input type="radio" name="q9" value="corporea"> Preferisco fare qualcosa di pratico</label>
+      </div>
 
-      <div class="question">
-        <p>8. Trovo facile...</p>
-        <label><input type="radio" name="q8" value="naturalistica"> Riconoscere piante, animali o fenomeni naturali</label>
-        <label><input type="radio" name="q8" value="intrapersonale"> Capire cosa provo e perché</label>
-        <label><input type="radio" name="q8" value="interpersonale"> Capire cosa provano gli altri</label>
-      </div>
+      <div class="question">
+  	<p>10. Nella vita di tutti i giorni...</p>
+  	<label><input type="radio" name="q10" value="intrapersonale"> Rifletto spesso su me stesso</label>
+  	<label><input type="radio" name="q10" value="naturalistica"> Mi piace osservare ciò che mi circonda</label>
+  	<label><input type="radio" name="q10" value="spaziale"> Penso per immagini</label>
+      </div>
 
-      <div class="question">
-        <p>9. Durante un lavoro di gruppo, io...</p>
-        <label><input type="radio" name="q9" value="interpersonale"> Coordino e ascolto tutti</label>
-        <label><input type="radio" name="q9" value="logico"> Mi concentro sulla strategia</label>
-        <label><input type="radio" name="q9" value="corporea"> Preferisco fare qualcosa di pratico</label>
-      </div>
 
-      <div class="question">
-        <p>10. Nella vita di tutti i giorni...</p>
-        <label><input type="radio" name="q10" value="intrapersonale"> Rifletto spesso su me stesso</label>
-        <label><input type="radio" name="q10" value="naturalistica"> Mi piace osservare ciò che mi circonda</label>
-        <label><input type="radio" name="q10" value="spaziale"> Penso per immagini</label>
-      </div>
+      <button type="button" onclick="calculateResult()">Scopri la tua intelligenza</button>
+    </form>
 
-      <button type="button" onclick="calculateResult()">Scopri la tua intelligenza</button>
-    </form>
+    <div id="result"></div>
+  </main>
 
-    <div id="result"></div>
-  </main>
+  <footer>
+    <p>&copy; 2025 Intelligenze Multiple</p>
+  </footer>
 
-  <footer>
-    <p>&copy; 2025 Intelligenze Multiple</p>
-  </footer>
+  <script>
+    function calculateResult() {
+  const responses = document.querySelectorAll('input[type=radio]:checked');
+  const scores = {
+    linguistica: 0,
+    logico: 0,
+    spaziale: 0,
+    corporea: 0,
+    musicale: 0,
+    interpersonale: 0,
+    intrapersonale: 0,
+    naturalistica: 0
+  };
 
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
+  responses.forEach(r => {
+    if (scores[r.value] !== undefined) {
+      scores[r.value]++;
+    }
+  });
 
-    function calculateResult() {
-      const responses = document.querySelectorAll('input[type=radio]:checked');
-      const scores = {
-        linguistica: 0,
-        logico: 0,
-        spaziale: 0,
-        corporea: 0,
-        musicale: 0,
-        interpersonale: 0,
-        intrapersonale: 0,
-        naturalistica: 0
-      };
+  let maxScore = 0;
+  let best = 'Nessuna risposta';
+  for (let intelligenza in scores) {
+    if (scores[intelligenza] > maxScore) {
+      maxScore = scores[intelligenza];
+      best = intelligenza;
+    }
+  }
 
-      responses.forEach(r => {
-        if (scores[r.value] !== undefined) {
-          scores[r.value]++;
-        }
-      });
+  const nomi = {
+    linguistica: "Linguistica",
+    logico: "Logico-Matematica",
+    spaziale: "Spaziale",
+    corporea: "Corporeo-Cinestetica",
+    musicale: "Musicale",
+    interpersonale: "Interpersonale",
+    intrapersonale: "Intrapersonale",
+    naturalistica: "Naturalistica"
+  };
 
-      let maxScore = 0;
-      let best = 'Nessuna risposta';
-      for (let intelligenza in scores) {
-        if (scores[intelligenza] > maxScore) {
-          maxScore = scores[intelligenza];
-          best = intelligenza;
-        }
-      }
+  const descrizioni = {
+    linguistica: "Hai una forte capacità con il linguaggio: ami leggere, scrivere e comunicare.",
+    logico: "Hai un talento per il ragionamento, l'analisi e la risoluzione di problemi logici o matematici.",
+    spaziale: "Hai una mente visiva: ti trovi a tuo agio con immagini, mappe e pensiero tridimensionale.",
+    corporea: "Hai una grande intelligenza fisica: ti esprimi bene con il corpo e apprendi facendo.",
+    musicale: "Percepisci il mondo attraverso suoni e ritmi: hai sensibilità musicale e udito fine.",
+    interpersonale: "Comprendi e comunichi bene con gli altri: sei empatico e sociale.",
+    intrapersonale: "Hai una profonda conoscenza di te stesso: rifletti sulle tue emozioni e motivazioni.",
+    naturalistica: "Hai un legame con la natura e sensibilità verso gli ambienti naturali e gli esseri viventi."
+  };
 
-      const nomi = {
-        linguistica: "Linguistica",
-        logico: "Logico-Matematica",
-        spaziale: "Spaziale",
-        corporea: "Corporeo-Cinestetica",
-        musicale: "Musicale",
-        interpersonale: "Interpersonale",
-        intrapersonale: "Intrapersonale",
-        naturalistica: "Naturalistica"
-      };
-
-      const descrizioni = {
-        linguistica: "Hai una forte capacità con il linguaggio: ami leggere, scrivere e comunicare.",
-        logico: "Hai un talento per il ragionamento, l'analisi e la risoluzione di problemi logici o matematici.",
-        spaziale: "Hai una mente visiva: ti trovi a tuo agio con immagini, mappe e pensiero tridimensionale.",
-        corporea: "Hai una grande intelligenza fisica: ti esprimi bene con il corpo e apprendi facendo.",
-        musicale: "Percepisci il mondo attraverso suoni e ritmi: hai sensibilità musicale e udito fine.",
-        interpersonale: "Comprendi e comunichi bene con gli altri: sei empatico e sociale.",
-        intrapersonale: "Hai una profonda conoscenza di te stesso: rifletti sulle tue emozioni e motivazioni.",
-        naturalistica: "Hai un legame con la natura e sensibilità verso gli ambienti naturali e gli esseri viventi."
-      };
-
-      document.getElementById('result').innerHTML =
-        maxScore > 0
-          ? `La tua intelligenza più sviluppata è: <strong>${nomi[best]}</strong><br><em>${descrizioni[best]}</em>`
-          : "Per favore, rispondi a tutte le domande.";
-    }
-  </script>
-
+  document.getElementById('result').innerHTML =
+    maxScore > 0
+      ? `La tua intelligenza più sviluppata è: <strong>${nomi[best]}</strong><br><em>${descrizioni[best]}</em>`
+      : "Per favore, rispondi a tutte le domande.";
+}
+  </script>
 </body>
 </html>
+
