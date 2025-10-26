@@ -6,7 +6,7 @@
 /* Palette di colori coerente */
 :root {
     --colore-primario: #0077cc;   
-    --colore-secondario: #28a745;   
+    --colore-secondario: #00FFFF;   
     --colore-sfondo: #f0f9ff;      
     --colore-testo: #003366;       
     --ombra-leggera: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -412,4 +412,5 @@ table tbody tr:hover {
         gap: 20px;
     }
 }
+
 
