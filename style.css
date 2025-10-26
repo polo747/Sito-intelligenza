@@ -86,13 +86,13 @@ nav ul li a:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-nav a[href="index.html"].active,
-nav a[href="tipi-intelligenza.html"].active,
-nav a[href="quiz.html"].active,
-nav a[href="confronto.html"].active,
-nav a[href="consigli.html"].active,
-nav a[href="esempi.html"].active,
-nav a[href="riflessioni.html"].active { 
+nav a[href="index.html"],
+nav a[href="tipi-intelligenza.html"],
+nav a[href="quiz.html"],
+nav a[href="confronto.html"],
+nav a[href="consigli.html"],
+nav a[href="esempi.html"],
+nav a[href="riflessioni.html"] { 
     color: white; 
     background-color: #0077cc; 
     box-shadow: 
