@@ -412,5 +412,45 @@ table tbody tr:hover {
         gap: 20px;
     }
 }
+.citazioni {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.citazione-card {
+    flex: 1 1 300px;
+    background-color: var(--colore-sfondo);
+    border-left: 5px solid var(--colore-secondario); /* Linea verde a sinistra */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: var(--ombra-leggera);
+    font-style: italic;
+    min-width: 250px;
+}
+
+.citazione-card p {
+    font-size: 1.1em;
+    margin-top: 0;
+    color: var(--colore-testo);
+}
+
+.citazione-card footer {
+    text-align: right;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--colore-primario);
+    margin-top: 10px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .citazioni {
+        flex-direction: column;
+    }
+}
+
 
 
