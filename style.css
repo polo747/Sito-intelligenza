@@ -1,8 +1,4 @@
-/* ================================================= */
-/* === 0. IMPOSTAZIONI GLOBALI E RESET === */
-/* ================================================= */
-* {
-    /* box-sizing: border-box assicura che padding e border non aumentino la larghezza totale degli elementi */
+ {
     box-sizing: border-box;
     /* Transizione globale dinamica (effetto molla per animazioni più evidenti) */
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
@@ -21,7 +17,6 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
-    /* Background gradient per un effetto "piatto" più moderno e vibrante */
     background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
     color: var(--colore-testo);
     margin: 0;
@@ -33,9 +28,6 @@ h1, h2, h3 {
     margin-bottom: 15px;
 }
 
-/* ================================================= */
-/* === 1. HEADER E NAVIGAZIONE (MOLTO INTERATTIVI) === */
-/* ================================================= */
 header {
     background-color: #b3e5fc;
     padding: 20px 0;
@@ -73,37 +65,29 @@ nav ul li a {
     font-weight: bold;
     padding: 8px 15px;
     border-radius: 5px;
-    /* Rende il link un blocco per l'animazione */
     display: inline-block; 
 }
 
-/* Interattività Estrema dei Pulsanti di Navigazione */
 nav ul li a:hover {
     color: white;
     background-color: #0077cc;
-    transform: translateY(-4px) scale(1.05); /* Sollevamento più marcato e leggero zoom */
+    transform: translateY(-4px) scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 77, 153, 0.4);
 }
 
 nav ul li a:active {
-    transform: translateY(0); /* Effetto "pressione" */
+    transform: translateY(0);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* Stato Attivo */
-nav a[href="index.html"] { color: white; background-color: #005fa3; } /* Esempio per Home */
+/* Stato Attivo (per indicare la pagina corrente) */
+nav a[href="index.html"] { color: white; background-color: #005fa3; } 
 nav a[href="tipi-intelligenza.html"] { color: white; background-color: #005fa3; }
 nav a[href="quiz.html"] { color: white; background-color: #005fa3; }
 nav a[href="confronto.html"] { color: white; background-color: #005fa3; }
 nav a[href="consigli.html"] { color: white; background-color: #005fa3; }
 nav a[href="esempi.html"] { color: white; background-color: #005fa3; }
 
-
-/* ================================================= */
-/* === 2. IMMAGINI (ANIMAZIONI AR/3D) === */
-/* ================================================= */
-
-/* Regola Generale per tutte le immagini */
 img {
     margin: 10px auto; 
     border-radius: 8px;
@@ -111,13 +95,13 @@ img {
     height: auto;
     box-shadow: var(--ombra-leggera);
     display: block;
-    transform-style: preserve-3d; /* Abilita effetti 3D */
+    transform-style: preserve-3d;
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
 /* Animazione Interattiva Aggressiva (effetto AR) */
 img:hover {
-    transform: scale(1.1) rotateY(5deg); /* Zoom e rotazione 3D */
+    transform: scale(1.1) rotateY(5deg);
     box-shadow: var(--ombra-forte); 
     filter: brightness(1.1); 
 }
@@ -127,11 +111,6 @@ header img {
     max-height: 350px;
     object-fit: cover;
 }
-
-
-/* ================================================= */
-/* === 3. LAYOUT E SEZIONI GENERALI === */
-/* ================================================= */
 main {
     max-width: 1200px;
     margin: 40px auto;
@@ -150,7 +129,7 @@ section {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
 }
 
-/* Layout Affiancato (Pagina Confronto) */
+/* Layout Affiancato (Pagina Confronto e Consigli) */
 .layout {
     display: flex;
     gap: 30px;
@@ -170,10 +149,6 @@ section {
     width: 100%;
     height: auto;
 }
-
-/* ================================================= */
-/* === 4. COMPONENTI INTERATTIVI (CTA) === */
-/* ================================================= */
 button {
     background-color: var(--colore-primario);
     color: #fff;
@@ -197,15 +172,10 @@ button {
 }
 
 .pulsante-cta:hover {
-    transform: translateY(-6px) scale(1.08); /* Effetto Molla in alto */
+    transform: translateY(-6px) scale(1.08);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     background-color: #1e7e34;
 }
-
-
-/* ================================================= */
-/* === 5. STILI PAGINA ESEMPI (CARD DINAMICHE) === */
-/* ================================================= */
 .esempi-griglia {
     list-style: none;
     padding: 0;
@@ -230,25 +200,20 @@ button {
     height: 200px;
     object-fit: cover;
     margin-bottom: 15px;
-    /* Reset della transizione specifica per la card */
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
 }
 
 /* Interattività AR (più forte) sulle card di esempio */
 .card-esempio:hover {
-    transform: translateY(-10px); /* Sollevamento estremo */
+    transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
 }
 
 .card-esempio:hover img {
-    transform: scale(1.2) rotateX(5deg) rotateY(-5deg); /* Zoom e rotazione 3D aggressiva */
+    transform: scale(1.2) rotateX(5deg) rotateY(-5deg);
     filter: brightness(1.2);
 }
 
-/* ================================================= */
-/* === 6. STILI PAGINA QUIZ (OPZIONI INTERATTIVE) === */
-/* ================================================= */
-/* Stile del bottone di calcolo del Quiz */
 #quizForm button {
     width: 100%; 
     padding: 15px;
@@ -258,7 +223,7 @@ button {
 
 #quizForm button:hover {
     background-color: #005fa3; 
-    transform: translateY(-5px) scale(1.02); /* Animazione rimbalzo */
+    transform: translateY(-5px) scale(1.02);
     box-shadow: 0 10px 20px rgba(0, 77, 153, 0.5);
 }
 
@@ -280,36 +245,47 @@ label {
     margin: 8px 0;
     cursor: pointer;
     font-size: 0.95em;
-    display: block; /* Aggiunto per funzionare con animazione */
+    display: block; 
 }
 
 /* Interattività Opzioni: Molla e Spostamento laterale */
 label:hover {
     background-color: #e6f7ff; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: translateX(10px) scale(1.02); /* Molla e spostamento a destra */
+    transform: translateX(10px) scale(1.02);
 }
 
-/* Stile Selezione (Checked) */
 input[type="radio"] {
-    opacity: 0;
+    /* Sposta l'elemento nativo fuori dalla vista ma lo lascia cliccabile tramite la label */
     position: absolute;
-    width: 0;
-    height: 0;
+    left: -9999px; 
+    opacity: 0; 
+    width: 1px;
+    height: 1px;
 }
 
 input[type="radio"]:checked + label {
     background-color: var(--colore-secondario); 
     color: white;
     border-color: var(--colore-secondario);
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7); /* Effetto bagliore di conferma */
+    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7); 
     transform: scale(1.01); 
 }
 
+#result {
+    text-align: center;
+    padding: 20px;
+    background-color: #FFF3CD;
+    border: 1px solid #FFC107;
+    border-radius: 8px;
+    margin-top: 30px !important;
+    color: #856404;
+}
 
-/* ================================================= */
-/* === 7. STILI TABELLA (CON MOVIMENTO) === */
-/* ================================================= */
+#result strong {
+    color: var(--colore-primario);
+    font-size: 1.3em;
+}
 
 table {
     width: 100%;
@@ -337,42 +313,66 @@ td {
 /* Interattività riga Tabella: Sollevamento e Zoom */
 table tbody tr:hover {
     background-color: #e6f7ff; 
-    transform: scale(1.015); /* Leggero zoom */
+    transform: scale(1.015);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
-/* ================================================= */
-/* === 8. STILI MODULO DI CONTATTO === */
-/* ================================================= */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #004d99;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #99ccff;
+    border-radius: 6px;
+    background-color: #f0f9ff;
+    font-size: 1em;
+    box-sizing: border-box;
+}
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: #0077cc;
     box-shadow: 0 0 8px rgba(0, 119, 204, 0.4);
     outline: none;
-    transform: scale(1.005); /* Effetto focus leggero */
+    transform: scale(1.005);
 }
 
 .submit-button {
     width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #0077cc;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Interattività Pulsante Invio (Molto Dinamico) */
 .submit-button:hover {
     background-color: #005fa3;
-    transform: translateY(-6px); /* Sollevamento Molla */
+    transform: translateY(-6px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* ================================================= */
-/* === 9. RESPONSIVITÀ (MOBILE) === */
-/* ================================================= */
-
 @media (max-width: 768px) {
-    /* Layout Affiancato -> Impilamento */
     .layout {
         flex-direction: column;
         gap: 20px;
@@ -383,13 +383,11 @@ table tbody tr:hover {
         flex: 1 1 100%; 
     }
 
-    /* Ordine immagine su mobile */
     .layout .image-container {
         order: -1; 
         margin-bottom: 20px;
     }
 
-    /* Navigazione */
     nav ul {
         flex-wrap: wrap; 
     }
@@ -398,12 +396,10 @@ table tbody tr:hover {
         margin: 5px 8px;
     }
 
-    /* Immagine Home */
     header img {
         max-height: 250px; 
     }
     
-    /* Griglia Esempi su mobile */
     .esempi-griglia {
         grid-template-columns: 1fr; 
         gap: 20px;
