@@ -1,176 +1,187 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz Intelligenze Multiple</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .question { margin-bottom: 20px; }
-    label { display: block; margin: 5px 0; }
-    #result { font-weight: bold; font-size: 1.2em; margin-top: 20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✅ Quiz | Domande sulle Intelligenze Multiple</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
- <header>
-    <nav class="navbar">
-      <div class="logo">🌟 Intelligenze Multiple</div>
-      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
-        <li><a href="quiz.html">Quiz</a></li>
-        <li><a href="confronto.html">Confronto</a></li>
-        <li><a href="consigli.html">Consigli</a></li>
-        <li><a href="esempi.html">Esempi</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="neumorphic-header" role="banner">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Home page">
+                <span role="img" aria-label="Stella luminosa">🌟</span> Intelligenze Multiple
+            </a>
+            
+            <input type="checkbox" id="nav-toggle-input" class="hidden-control">
+            <label for="nav-toggle-input" class="nav-toggle-label" aria-label="Apri menu di navigazione">☰</label>
 
-  <main>
-    <form id="quizForm">
-      <div class="question">
-        <p>1. Preferisco esprimermi...</p>
-        <label><input type="radio" name="q1" value="linguistica"> Attraverso la scrittura o il parlare</label>
-        <label><input type="radio" name="q1" value="musicale"> Cantando o suonando</label>
-        <label><input type="radio" name="q1" value="corporea"> Muovendomi o con il corpo</label>
-      </div>
+            <nav id="main-nav" class="nav-menu" role="navigation">
+                <ul role="list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="tipi-intelligenza.html">Tipi di Intelligenza</a></li>
+                    <li><a href="quiz.html" class="active" aria-current="page">Quiz</a></li>
+                    <li><a href="confronto.html">Confronto</a></li>
+                    <li><a href="consigli.html">Consigli</a></li>
+                    <li><a href="esempi.html">Esempi</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-      <div class="question">
-        <p>2. Nei miei momenti liberi preferisco...</p>
-        <label><input type="radio" name="q2" value="logico"> Risolvere enigmi o problemi logici</label>
-        <label><input type="radio" name="q2" value="naturalistica"> Stare a contatto con la natura</label>
-        <label><input type="radio" name="q2" value="intrapersonale"> Riflettere su me stesso</label>
-      </div>
+    <main id="content" role="main">
+        <section class="hero-section">
+            <div class="container">
+                <h1>Fai il <span class="highlight">Quiz Completo</span></h1>
+                <p class="subtitle">Rispondi alle **10 domande**. **IMPORTANTE:** Senza JavaScript, questo quiz è solo a scopo dimostrativo e non calcolerà un risultato finale.</p>
+            </div>
+        </section>
 
-      <div class="question">
-        <p>3. A scuola mi piaceva di più...</p>
-        <label><input type="radio" name="q3" value="spaziale"> Disegnare o visualizzare oggetti</label>
-        <label><input type="radio" name="q3" value="interpersonale"> Lavorare in gruppo</label>
-        <label><input type="radio" name="q3" value="linguistica"> Leggere e scrivere</label>
-      </div>
+        <section class="container mt-40 neumorphic-card">
+            <form>
+                <p>Seleziona l'opzione che meglio descrive le tue preferenze o abilità.</p>
+                
+                <div class="question" role="group" aria-labelledby="q1-title">
+                    <p id="q1-title" class="question-title">1. Quando ti senti stressato, quale attività ti rilassa di più?</p>
+                    <input type="radio" id="q1a" name="q1" value="linguistica" required>
+                    <label for="q1a" class="neumorphic-radio-label">Scrivere un diario o una storia (Linguistica).</label>
+                    <input type="radio" id="q1b" name="q1" value="musicale" required>
+                    <label for="q1b" class="neumorphic-radio-label">Ascoltare musica o suonare uno strumento (Musicale).</label>
+                    <input type="radio" id="q1c" name="q1" value="spaziale" required>
+                    <label for="q1c" class="neumorphic-radio-label">Dedicarti al disegno o alla pittura (Spaziale).</label>
+                    <input type="radio" id="q1d" name="q1" value="logica" required>
+                    <label for="q1d" class="neumorphic-radio-label">Risolvere un puzzle o un Sudoku (Logico-Matematica).</label>
+                </div>
 
-      <div class="question">
-        <p>4. Quando devo risolvere un problema...</p>
-        <label><input type="radio" name="q4" value="logico"> Lo analizzo con logica e dati</label>
-        <label><input type="radio" name="q4" value="corporea"> Preferisco agire fisicamente</label>
-        <label><input type="radio" name="q4" value="interpersonale"> Parlo con gli altri per trovare una soluzione</label>
-      </div>
+                <div class="question" role="group" aria-labelledby="q2-title">
+                    <p id="q2-title" class="question-title">2. Se devi risolvere un problema complesso, come approcci la situazione?</p>
+                    <input type="radio" id="q2a" name="q2" value="linguistica" required>
+                    <label for="q2a" class="neumorphic-radio-label">Raccolgo informazioni da diverse fonti e scrivo un riassunto (Linguistica).</label>
+                    <input type="radio" id="q2b" name="q2" value="logica" required>
+                    <label for="q2b" class="neumorphic-radio-label">Scompongo il problema in passaggi logici e cerco schemi (Logico-Matematica).</label>
+                    <input type="radio" id="q2c" name="q2" value="interpersonale" required>
+                    <label for="q2c" class="neumorphic-radio-label">Ne parlo con altre persone per sentire diversi punti di vista (Interpersonale).</label>
+                    <input type="radio" id="q2d" name="q2" value="corporea" required>
+                    <label for="q2d" class="neumorphic-radio-label">Mi distraggo per un po' e affronto il problema con energia (Corporeo-Cinestetica).</label>
+                </div>
+                
+                <div class="question" role="group" aria-labelledby="q3-title">
+                    <p id="q3-title" class="question-title">3. Sei in un luogo nuovo. Cosa ti aiuta di più a orientarti?</p>
+                    <input type="radio" id="q3a" name="q3" value="naturalistica" required>
+                    <label for="q3a" class="neumorphic-radio-label">La posizione del sole e gli elementi naturali (Naturalistica).</label>
+                    <input type="radio" id="q3b" name="q3" value="spaziale" required>
+                    <label for="q3b" class="neumorphic-radio-label">Creare una mappa mentale del percorso (Spaziale).</label>
+                    <input type="radio" id="q3c" name="q3" value="linguistica" required>
+                    <label for="q3c" class="neumorphic-radio-label">Chiedere indicazioni precise a una persona (Linguistica).</label>
+                    <input type="radio" id="q3d" name="q3" value="corporea" required>
+                    <label for="q3d" class="neumorphic-radio-label">Ricordare le sensazioni e il movimento che hai fatto (Corporeo-Cinestetica).</label>
+                </div>
+                
+                <div class="question" role="group" aria-labelledby="q4-title">
+                    <p id="q4-title" class="question-title">4. Quando devi imparare un nuovo sport o un ballo, il tuo metodo è:</p>
+                    <input type="radio" id="q4a" name="q4" value="musicale" required>
+                    <label for="q4a" class="neumorphic-radio-label">Ascoltare attentamente il ritmo o il tempo (Musicale).</label>
+                    <input type="radio" id="q4b" name="q4" value="logica" required>
+                    <label for="q4b" class="neumorphic-radio-label">Analizzare la meccanica dei movimenti e le regole (Logico-Matematica).</label>
+                    <input type="radio" id="q4c" name="q4" value="corporea" required>
+                    <label for="q4c" class="neumorphic-radio-label">Provare subito e ripetere finché il corpo non memorizza (Corporeo-Cinestetica).</label>
+                    <input type="radio" id="q4d" name="q4" value="interpersonale" required>
+                    <label for="q4d" class="neumorphic-radio-label">Osservare attentamente gli altri e chiedere consigli (Interpersonale).</label>
+                </div>
 
-      <div class="question">
-        <p>5. Mi sento più a mio agio...</p>
-        <label><input type="radio" name="q5" value="musicale"> In ambienti musicali</label>
-        <label><input type="radio" name="q5" value="spaziale"> Usando immagini o mappe</label>
-        <label><input type="radio" name="q5" value="naturalistica"> All'aperto, nella natura</label>
-      </div>
+                 <div class="question" role="group" aria-labelledby="q5-title">
+                    <p id="q5-title" class="question-title">5. Quale affermazione sui suoni è più vera per te?</p>
+                    <input type="radio" id="q5a" name="q5" value="linguistica" required>
+                    <label for="q5a" class="neumorphic-radio-label">Mi ricordo facilmente i nomi delle persone (Linguistica).</label>
+                    <input type="radio" id="q5b" name="q5" value="musicale" required>
+                    <label for="q5b" class="neumorphic-radio-label">Riesco a canticchiare una melodia che ho sentito una sola volta (Musicale).</label>
+                    <input type="radio" id="q5c" name="q5" value="spaziale" required>
+                    <label for="q5c" class="neumorphic-radio-label">Mi ricordo meglio i volti che i nomi (Spaziale).</label>
+                    <input type="radio" id="q5d" name="q5" value="intrapersonale" required>
+                    <label for="q5d" class="neumorphic-radio-label">Preferisco il silenzio per concentrarmi (Intrapersonale).</label>
+                </div>
 
-      <div class="question">
-        <p>6. Quando ascolto una storia...</p>
-        <label><input type="radio" name="q6" value="linguistica"> Mi concentro su come è raccontata</label>
-        <label><input type="radio" name="q6" value="spaziale"> La visualizzo nella mia mente</label>
-        <label><input type="radio" name="q6" value="interpersonale"> Mi immedesimo nei personaggi</label>
-      </div>
+                 <div class="question" role="group" aria-labelledby="q6-title">
+                    <p id="q6-title" class="question-title">6. In un team, il tuo contributo principale è solitamente:</p>
+                    <input type="radio" id="q6a" name="q6" value="logica" required>
+                    <label for="q6a" class="neumorphic-radio-label">Fornire analisi dettagliate e piani d'azione logici (Logico-Matematica).</label>
+                    <input type="radio" id="q6b" name="q6" value="corporea" required>
+                    <label for="q6b" class="neumorphic-radio-label">Lavorare alla fase pratica e di esecuzione (Corporeo-Cinestetica).</label>
+                    <input type="radio" id="q6c" name="q6" value="interpersonale" required>
+                    <label for="q6c" class="neumorphic-radio-label">Mediare i conflitti e motivare i membri del team (Interpersonale).</label>
+                    <input type="radio" id="q6d" name="q6" value="intrapersonale" required>
+                    <label for="q6d" class="neumorphic-radio-label">Garantire che il lavoro sia allineato ai valori del team (Intrapersonale).</label>
+                </div>
 
-      <div class="question">
-        <p>7. Mi sento realizzato quando...</p>
-        <label><input type="radio" name="q7" value="corporea"> Uso il corpo per creare o fare qualcosa</label>
-        <label><input type="radio" name="q7" value="musicale"> Creo o ascolto musica</label>
-        <label><input type="radio" name="q7" value="logico"> Risolvo qualcosa in modo razionale</label>
-      </div>
+                 <div class="question" role="group" aria-labelledby="q7-title">
+                    <p id="q7-title" class="question-title">7. Il tuo fine settimana ideale include:</p>
+                    <input type="radio" id="q7a" name="q7" value="interpersonale" required>
+                    <label for="q7a" class="neumorphic-radio-label">Una festa o un grande evento sociale con amici (Interpersonale).</label>
+                    <input type="radio" id="q7b" name="q7" value="spaziale" required>
+                    <label for="q7b" class="neumorphic-radio-label">Un progetto di bricolage o un restauro in casa (Spaziale).</label>
+                    <input type="radio" id="q7c" name="q7" value="musicale" required>
+                    <label for="q7c" class="neumorphic-radio-label">Andare a un concerto o in un locale con musica dal vivo (Musicale).</label>
+                    <input type="radio" id="q7d" name="q7" value="intrapersonale" required>
+                    <label for="q7d" class="neumorphic-radio-label">Tempo tranquillo per la meditazione, la lettura o l'autoriflessione (Intrapersonale).</label>
+                </div>
+                
+                 <div class="question" role="group" aria-labelledby="q8-title">
+                    <p id="q8-title" class="question-title">8. Quando fai una passeggiata in un parco o in natura, cosa ti attira di più?</p>
+                    <input type="radio" id="q8a" name="q8" value="linguistica" required>
+                    <label for="q8a" class="neumorphic-radio-label">La targa che descrive l'area o la storia del luogo (Linguistica).</label>
+                    <input type="radio" id="q8b" name="q8" value="logica" required>
+                    <label for="q8b" class="neumorphic-radio-label">I sentieri ben definiti e le strutture geometriche (Logico-Matematica).</label>
+                    <input type="radio" id="q8c" name="q8" value="naturalistica" required>
+                    <label for="q8c" class="neumorphic-radio-label">Riconoscere diversi tipi di piante, uccelli o insetti (Naturalistica).</label>
+                    <input type="radio" id="q8d" name="q8" value="corporea" required>
+                    <label for="q8d" class="neumorphic-radio-label">La sensazione del terreno sotto i piedi e lo sforzo fisico (Corporeo-Cinestetica).</label>
+                </div>
 
-      <div class="question">
-        <p>8. Trovo facile...</p>
-        <label><input type="radio" name="q8" value="naturalistica"> Riconoscere piante, animali o fenomeni naturali</label>
-        <label><input type="radio" name="q8" value="intrapersonale"> Capire cosa provo e perché</label>
-        <label><input type="radio" name="q8" value="interpersonale"> Capire cosa provano gli altri</label>
-      </div>
+                 <div class="question" role="group" aria-labelledby="q9-title">
+                    <p id="q9-title" class="question-title">9. Se devi spiegare un concetto complicato, preferisci:</p>
+                    <input type="radio" id="q9a" name="q9" value="spaziale" required>
+                    <label for="q9a" class="neumorphic-radio-label">Disegnare un diagramma o usare un modello 3D (Spaziale).</label>
+                    <input type="radio" id="q9b" name="q9" value="linguistica" required>
+                    <label for="q9b" class="neumorphic-radio-label">Usare una metafora potente o un vocabolario preciso (Linguistica).</label>
+                    <input type="radio" id="q9c" name="q9" value="interpersonale" required>
+                    <label for="q9c" class="neumorphic-radio-label">Raccontare una storia che leghi il concetto all'esperienza (Interpersonale).</label>
+                    <input type="radio" id="q9d" name="q9" value="logica" required>
+                    <label for="q9d" class="neumorphic-radio-label">Presentare dati e statistiche a supporto (Logico-Matematica).</label>
+                </div>
 
-      <div class="question">
-        <p>9. Durante un lavoro di gruppo, io...</p>
-        <label><input type="radio" name="q9" value="interpersonale"> Coordino e ascolto tutti</label>
-        <label><input type="radio" name="q9" value="logico"> Mi concentro sulla strategia</label>
-        <label><input type="radio" name="q9" value="corporea"> Preferisco fare qualcosa di pratico</label>
-      </div>
+                 <div class="question" role="group" aria-labelledby="q10-title">
+                    <p id="q10-title" class="question-title">10. Qual è l'affermazione più vicina al tuo modo di apprendere gli errori?</p>
+                    <input type="radio" id="q10a" name="q10" value="intrapersonale" required>
+                    <label for="q10a" class="neumorphic-radio-label">Rifletto a lungo in solitudine per capire cosa ho sbagliato (Intrapersonale).</label>
+                    <input type="radio" id="q10b" name="q10" value="interpersonale" required>
+                    <label for="q10b" class="neumorphic-radio-label">Chiedo feedback e consigli ai miei pari o a un esperto (Interpersonale).</label>
+                    <input type="radio" id="q10c" name="q10" value="naturalistica" required>
+                    <label for="q10c" class="neumorphic-radio-label">Torno alla fonte del problema e lo osservo in un contesto pratico (Naturalistica).</label>
+                    <input type="radio" id="q10d" name="q10" value="corporea" required>
+                    <label for="q10d" class="neumorphic-radio-label">Ripeto l'azione immediatamente finché non ottengo il risultato giusto (Corporeo-Cinestetica).</label>
+                </div>
+                
+                
+                <button type="submit" class="neumorphic-button large-button" id="calculateQuiz">
+                    Visualizza Risultato (Dimostrativo)
+                </button>
+            </form>
+            
+            <div id="result" class="neumorphic-card quiz-result mt-40">
+                <p><strong>Risultato:</strong> Qui apparirebbe l'analisi della tua intelligenza dominante, se fosse attivo JavaScript.</p>
+            </div>
+        </section>
 
-      <div class="question">
-        <p>10. Nella vita di tutti i giorni...</p>
-        <label><input type="radio" name="q10" value="intrapersonale"> Rifletto spesso su me stesso</label>
-        <label><input type="radio" name="q10" value="naturalistica"> Mi piace osservare ciò che mi circonda</label>
-        <label><input type="radio" name="q10" value="spaziale"> Penso per immagini</label>
-      </div>
+    </main>
 
-      <button type="button" onclick="calculateResult()">Scopri la tua intelligenza</button>
-    </form>
-
-    <div id="result"></div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Intelligenze Multiple</p>
-  </footer>
-
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
-
-    function calculateResult() {
-      const responses = document.querySelectorAll('input[type=radio]:checked');
-      const scores = {
-        linguistica: 0,
-        logico: 0,
-        spaziale: 0,
-        corporea: 0,
-        musicale: 0,
-        interpersonale: 0,
-        intrapersonale: 0,
-        naturalistica: 0
-      };
-
-      responses.forEach(r => {
-        if (scores[r.value] !== undefined) {
-          scores[r.value]++;
-        }
-      });
-
-      let maxScore = 0;
-      let best = 'Nessuna risposta';
-      for (let intelligenza in scores) {
-        if (scores[intelligenza] > maxScore) {
-          maxScore = scores[intelligenza];
-          best = intelligenza;
-        }
-      }
-
-      const nomi = {
-        linguistica: "Linguistica",
-        logico: "Logico-Matematica",
-        spaziale: "Spaziale",
-        corporea: "Corporeo-Cinestetica",
-        musicale: "Musicale",
-        interpersonale: "Interpersonale",
-        intrapersonale: "Intrapersonale",
-        naturalistica: "Naturalistica"
-      };
-
-      const descrizioni = {
-        linguistica: "Hai una forte capacità con il linguaggio: ami leggere, scrivere e comunicare.",
-        logico: "Hai un talento per il ragionamento, l'analisi e la risoluzione di problemi logici o matematici.",
-        spaziale: "Hai una mente visiva: ti trovi a tuo agio con immagini, mappe e pensiero tridimensionale.",
-        corporea: "Hai una grande intelligenza fisica: ti esprimi bene con il corpo e apprendi facendo.",
-        musicale: "Percepisci il mondo attraverso suoni e ritmi: hai sensibilità musicale e udito fine.",
-        interpersonale: "Comprendi e comunichi bene con gli altri: sei empatico e sociale.",
-        intrapersonale: "Hai una profonda conoscenza di te stesso: rifletti sulle tue emozioni e motivazioni.",
-        naturalistica: "Hai un legame con la natura e sensibilità verso gli ambienti naturali e gli esseri viventi."
-      };
-
-      document.getElementById('result').innerHTML =
-        maxScore > 0
-          ? `La tua intelligenza più sviluppata è: <strong>${nomi[best]}</strong><br><em>${descrizioni[best]}</em>`
-          : "Per favore, rispondi a tutte le domande.";
-    }
-  </script>
-
+    <footer class="neumorphic-footer" role="contentinfo">
+        <div class="container">
+            <p>&copy; 2025 Intelligenze Multiple – Marco Abbo</p>
+        </div>
+    </footer>
 </body>
 </html>
 
