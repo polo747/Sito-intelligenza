@@ -163,16 +163,14 @@ img {
 }
 
 img:hover {
-    transform: scale(1.1) rotateY(6deg);
-    box-shadow: 0 10px 40px rgba(0, 255, 255, 0.6);
-    filter: brightness(1.15);
+    transform: scale(1.1) rotateY(5deg);
+    box-shadow: var(--ombra-forte); 
+    filter: brightness(1.1); 
 }
 
-/* FLOAT leggera sulle immagini header */
 header img {
     max-height: 350px;
     object-fit: cover;
-    animation: floatImg 6s ease-in-out infinite;
 }
 
 @keyframes floatImg {
@@ -290,10 +288,21 @@ button:hover, .pulsante-cta:hover {
 }
 
 /* Tabelle con animazioni */
-table tbody tr:hover {
-    background-color: rgba(0,255,255,0.1);
-    box-shadow: 0 4px 15px rgba(0,255,255,0.3);
-    transform: scale(1.01);
+label {
+    background-color: var(--colore-sfondo);
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    font-size: 0.95em;
+    display: block; 
+}
+
+label:hover {
+    background-color: #e6f7ff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transform: translateX(10px) scale(1.02);
 }
 
 /* Citazioni effetto fade e glow */
@@ -344,6 +353,7 @@ table tbody tr:hover {
         gap: 20px;
     }
 }
+
 
 
 
