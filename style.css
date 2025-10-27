@@ -1,448 +1,424 @@
-{
-    box-sizing: border-box;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
+/* =========================================================
+   🌈 STILE COMPLETO RINNOVATO - VERSIONE 2025
+   Con tema scuro automatico e layout completamente responsive
+   ========================================================= */
+
+/* ------------------------------- */
+/* ⚙️ IMPOSTAZIONI GLOBALI */
+/* ------------------------------- */
+
+* {
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  scroll-behavior: smooth;
 }
 
-/* Palette di colori coerente */
 :root {
-    --colore-primario: #0077cc;   
-    --colore-secondario: #00FFFF;   
-    --colore-sfondo: #f0f9ff;      
-    --colore-testo: #003366;       
-    --ombra-leggera: 0 4px 10px rgba(0, 0, 0, 0.15);
-    --ombra-forte: 0 10px 25px rgba(0, 0, 0, 0.3);
+  /* 🎨 Tema chiaro */
+  --colore-primario: #0077cc;
+  --colore-secondario: #00ffff;
+  --colore-sfondo: #f0f9ff;
+  --colore-testo: #003366;
+  --ombra-leggera: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --ombra-forte: 0 10px 25px rgba(0, 0, 0, 0.3);
+  --durata-transizione: 0.4s;
+  --curva-transizione: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
+
+/* 🌙 Tema scuro automatico */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --colore-primario: #00aaff;
+    --colore-secondario: #00e6b8;
+    --colore-sfondo: #0a1929;
+    --colore-testo: #e0f7fa;
+    --ombra-leggera: 0 4px 10px rgba(255, 255, 255, 0.08);
+    --ombra-forte: 0 10px 25px rgba(255, 255, 255, 0.15);
+  }
+
+  body {
+    background: linear-gradient(to bottom right, #0a1929, #001e3c);
+    color: var(--colore-testo);
+  }
+
+  section,
+  .card-esempio,
+  .contact-form {
+    background-color: #001e3c;
+    color: var(--colore-testo);
+  }
+
+  nav {
+    background-color: #003366;
+  }
+
+  nav ul li a {
+    color: #e0f7fa;
+  }
+
+  td {
+    background-color: #0a1929;
+  }
+
+  th {
+    background-color: var(--colore-primario);
+  }
+
+  input,
+  textarea {
+    background-color: #002b55 !important;
+    color: #e0f7fa;
+    border-color: #004d99;
+  }
+
+  input:focus,
+  textarea:focus {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  }
+}
+
+/* ------------------------------- */
+/* 🧱 STRUTTURA BASE */
+/* ------------------------------- */
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
-    color: var(--colore-testo);
-    margin: 0;
-    padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffffff);
+  color: var(--colore-testo);
+  margin: 0;
+  padding: 0;
 }
 
 h1, h2, h3 {
-    color: var(--colore-primario);
-    margin-bottom: 15px;
+  color: var(--colore-primario);
+  margin-bottom: 15px;
 }
 
 header {
-    background-color: #b3e5fc;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin-bottom: 10px;
-}
-
-nav {
-    background-color: #005fa3; 
-    padding: 10px 0;
-    margin-bottom: 0;
-    border-radius: 0;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white; 
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 20px; 
-    border-radius: 25px; 
-    display: inline-block; 
-    border: 2px solid transparent; 
-}
-
-
-nav ul li a:hover {
-    color: #b3e5fc; 
-    background-color: rgba(179, 229, 252, 0.1);
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 
-        0 0 10px #b3e5fc, 
-        0 0 20px #b3e5fc, 
-        0 0 40px #0077cc; 
-    border-color: #b3e5fc; 
-}
-
-nav ul li a:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-nav a[href="index.html"],
-nav a[href="tipi-intelligenza.html"],
-nav a[href="quiz.html"],
-nav a[href="confronto.html"],
-nav a[href="consigli.html"],
-nav a[href="esempi.html"],
-nav a[href="riflessioni.html"] { 
-    color: white; 
-    background-color: #0077cc; 
-    box-shadow: 
-        0 0 15px #b3e5fc,
-        0 0 25px #b3e5fc;
-}
-img {
-    margin: 10px auto; 
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-    box-shadow: var(--ombra-leggera);
-    display: block;
-    transform-style: preserve-3d;
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
-}
-
-img:hover {
-    transform: scale(1.1) rotateY(5deg);
-    box-shadow: var(--ombra-forte); 
-    filter: brightness(1.1); 
+  background-color: #b3e5fc;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 header img {
-    max-height: 350px;
-    object-fit: cover;
+  max-height: 350px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
+/* ------------------------------- */
+/* 🌐 NAVIGAZIONE */
+/* ------------------------------- */
+
+nav {
+  background-color: #005fa3;
+  padding: 10px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  transition: all var(--durata-transizione) var(--curva-transizione);
+}
+
+nav ul li a:hover {
+  color: #b3e5fc;
+  background-color: rgba(179, 229, 252, 0.1);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 0 20px #b3e5fc;
+  border-color: #b3e5fc;
+}
+
+/* ------------------------------- */
+/* 🖼️ CONTENUTO PRINCIPALE */
+/* ------------------------------- */
 
 main {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: #f0f9ff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transform: perspective(1000px);
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px;
+  background-color: var(--colore-sfondo);
+  border-radius: 10px;
+  box-shadow: var(--ombra-leggera);
 }
 
 section {
-    background-color: white;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+  background-color: white;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: var(--ombra-leggera);
 }
 
+/* ------------------------------- */
+/* 📸 IMMAGINI */
+/* ------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 10px auto;
+  border-radius: 8px;
+  box-shadow: var(--ombra-leggera);
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: var(--ombra-forte);
+  filter: brightness(1.1);
+}
+
+/* ------------------------------- */
+/* 🧩 LAYOUT + ESEMPI */
+/* ------------------------------- */
+
 .layout {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .layout .content {
-    flex: 2;
+  flex: 2;
 }
 
 .layout .image-container {
-    flex: 1;
+  flex: 1;
 }
 
 .layout img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-button {
-    background-color: var(--colore-primario);
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-.pulsante-cta {
-    display: inline-block;
-    background-color: var(--colore-secondario);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    text-decoration: none;
-    padding: 12px 25px;
-    margin-top: 20px;
-    width: auto !important;
-}
-
-.pulsante-cta:hover {
-    transform: translateY(-6px) scale(1.08);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    background-color: #1e7e34;
-}
-
+/* 💡 Griglia esempi */
 .esempi-griglia {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 30px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0;
+  margin: 0;
 }
 
 .card-esempio {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--ombra-leggera);
-    text-align: center;
-    padding-bottom: 20px;
-    transition: all 0.4s ease-out;
-    cursor: default;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--ombra-leggera);
+  text-align: center;
+  padding-bottom: 20px;
+  transition: all 0.4s ease-out;
 }
 
 .card-esempio img {
-    width: 100%;
-    height: 150px; 
-    object-fit: cover; 
-    margin-bottom: 15px;
-    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.6s ease;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .card-esempio:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
 .card-esempio:hover img {
-    transform: scale(1.2) rotateX(5deg) rotateY(-5deg);
-    filter: brightness(1.2);
+  transform: scale(1.08);
+  filter: brightness(1.15);
 }
 
-#quizForm button {
-    width: 100%; 
-    padding: 15px;
-    background-color: var(--colore-primario);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-#quizForm button:hover {
-    background-color: #005fa3; 
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 20px rgba(0, 77, 153, 0.5);
-}
-
-.question {
-    background-color: white;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-label {
-    background-color: var(--colore-sfondo);
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    padding: 10px 15px;
-    margin: 8px 0;
-    cursor: pointer;
-    font-size: 0.95em;
-    display: block; 
-}
-
-label:hover {
-    background-color: #e6f7ff; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transform: translateX(10px) scale(1.02);
-}
-
-input[type="radio"] {
-    position: absolute;
-    left: -9999px; 
-    opacity: 0; 
-    width: 1px;
-    height: 1px;
-}
-
-input[type="radio"]:checked + label {
-    background-color: var(--colore-secondario); 
-    color: white;
-    border-color: var(--colore-secondario);
-    box-shadow: 0 0 15px rgba(40, 167, 69, 0.7); 
-    transform: scale(1.01); 
-}
-
-#result {
-    text-align: center;
-    padding: 20px;
-    background-color: #FFF3CD;
-    border: 1px solid #FFC107;
-    border-radius: 8px;
-    margin-top: 30px !important;
-    color: #856404;
-}
-
-#result strong {
-    color: var(--colore-primario);
-    font-size: 1.3em;
-}
-
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-th {
-    padding: 15px 12px;
-    background-color: #0077cc;
-    color: white;
-    border: none;
-}
-
-td {
-    padding: 12px;
-    background-color: #f0f9ff;
-    border-bottom: 1px solid #cceeff;
-    transition: all 0.3s ease;
-}
-
-table tbody tr:hover {
-    background-color: #e6f7ff; 
-    transform: scale(1.015);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-}
+/* ------------------------------- */
+/* 📋 FORM CONTATTI */
+/* ------------------------------- */
 
 .contact-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.form-group {
-    margin-bottom: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #004d99;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #004d99;
 }
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #99ccff;
-    border-radius: 6px;
-    background-color: #f0f9ff;
-    font-size: 1em;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #99ccff;
+  border-radius: 6px;
+  background-color: #f0f9ff;
+  font-size: 1em;
+  box-sizing: border-box;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    border-color: #0077cc;
-    box-shadow: 0 0 8px rgba(0, 119, 204, 0.4);
-    outline: none;
-    transform: scale(1.005);
+  border-color: #0077cc;
+  box-shadow: 0 0 8px rgba(0, 119, 204, 0.4);
+  outline: none;
+  transform: scale(1.005);
 }
 
 .submit-button {
-    width: 100%;
-    padding: 15px;
-    font-size: 1.1em;
-    background-color: #0077cc;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1em;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--durata-transizione) var(--curva-transizione);
 }
 
 .submit-button:hover {
-    background-color: #005fa3;
-    transform: translateY(-6px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-.citazione-card {
-    flex: 1 1 300px;
-    background-color: var(--colore-sfondo);
-    border-left: 5px solid var(--colore-secondario); /* Linea verde a sinistra */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: var(--ombra-leggera);
-    font-style: italic;
-    min-width: 250px;
+  background-color: #005fa3;
+  transform: translateY(-5px);
+  box-shadow: var(--ombra-forte);
 }
 
-.citazione-card p {
-    font-size: 1.1em;
-    margin-top: 0;
-    color: var(--colore-testo);
+/* ------------------------------- */
+/* 💬 CITAZIONI */
+/* ------------------------------- */
+
+.citazioni {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.citazione-card {
+  flex: 1 1 300px;
+  background-color: var(--colore-sfondo);
+  border-left: 5px solid var(--colore-secondario);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--ombra-leggera);
+  font-style: italic;
+  min-width: 250px;
 }
 
 .citazione-card footer {
-    text-align: right;
-    font-style: normal;
-    font-weight: bold;
-    color: var(--colore-primario);
-    margin-top: 10px;
-    display: block;
+  text-align: right;
+  font-weight: bold;
+  color: var(--colore-primario);
+  margin-top: 10px;
 }
+
+/* ------------------------------- */
+/* 📱 RESPONSIVE DESIGN */
+/* ------------------------------- */
+
+/* Tablet */
 @media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .layout .content,
-    .layout .image-container {
-        flex: 1 1 100%; 
-    }
-
-    .layout .image-container {
-        order: -1; 
-        margin-bottom: 20px;
-    }
-
-    nav ul {
-        flex-wrap: wrap; 
-    }
-
-    nav ul li {
-        margin: 5px 8px;
-    }
-
-    header img {
-        max-height: 250px; 
-    }
-    
-    .esempi-griglia {
-        grid-template-columns: 1fr; 
-        gap: 20px;
-    }
-}
-.citazioni {
-    display: flex;
+  .layout {
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+  }
+
+  .layout .image-container {
+    order: -1;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  main {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  header img {
+    max-height: 250px;
+  }
+
+  .esempi-griglia {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
 }
+
+/* Smartphone */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95em;
+  }
+
+  nav ul li a {
+    padding: 8px 14px;
+    font-size: 0.9em;
+  }
+
+  .esempi-griglia {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .card-esempio img {
+    height: 160px;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  button, .pulsante-cta {
+    padding: 10px 15px;
+    font-size: 0.95em;
+  }
+
+  .citazioni {
+    flex-direction: column;
+  }
+}
+
+/* ------------------------------- */
+/* ♿ ACCESSIBILITÀ */
+/* ------------------------------- */
+
+a:focus,
+button:focus {
+  outline: 2px dashed var(--colore-secondario);
+  outline-offset: 3px;
+}
+
+
 
 
 
